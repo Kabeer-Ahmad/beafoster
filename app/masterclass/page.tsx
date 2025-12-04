@@ -10,14 +10,14 @@ export default function Masterclass() {
     {
       id: 1,
       title: 'Couture Design Fundamentals',
-      instructor: 'Bea Foster',
+      instructor: 'The Black Tie Chandelier Gala',
       duration: '3 Days',
       level: 'Intermediate',
       price: '$2,500',
       image: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=800&q=80',
       description: 'Master the art of couture design through hands-on workshops covering pattern making, fabric selection, and finishing techniques.',
       date: 'March 20-22, 2024',
-      location: 'Bea Foster Atelier, Milan',
+      location: 'The Black Tie Chandelier Gala Atelier, Milan',
       capacity: '12 Students',
       topics: [
         'Pattern Drafting & Fitting',
@@ -29,7 +29,7 @@ export default function Masterclass() {
     {
       id: 2,
       title: 'Interior Design Mastery',
-      instructor: 'Bea Foster',
+      instructor: 'The Black Tie Chandelier Gala',
       duration: '5 Days',
       level: 'All Levels',
       price: '$3,200',
@@ -48,7 +48,7 @@ export default function Masterclass() {
     {
       id: 3,
       title: 'Personal Styling Excellence',
-      instructor: 'Bea Foster',
+      instructor: 'The Black Tie Chandelier Gala',
       duration: '2 Days',
       level: 'Beginner',
       price: '$1,800',
@@ -67,7 +67,7 @@ export default function Masterclass() {
     {
       id: 4,
       title: 'Luxury Brand Development',
-      instructor: 'Bea Foster',
+      instructor: 'The Black Tie Chandelier Gala',
       duration: '4 Days',
       level: 'Advanced',
       price: '$4,000',

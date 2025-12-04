@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ChevronDown, ShoppingBag } from 'lucide-react';
 import { useCartStore } from '@/store/cartStore';
@@ -50,15 +51,72 @@ export default function Navbar() {
       }`}
     >
       <div className="container-luxury">
-        <div className="flex items-center justify-between h-16 sm:h-20">
-          {/* Logo */}
-          <Link href="/" className="flex items-center">
-            <motion.span
-              className="text-xl sm:text-2xl font-serif text-black"
+        <div className="flex lg:flex-row items-center justify-between h-16 sm:h-20">
+          {/* Mobile Layout: Grid with 3 columns */}
+          <div className="lg:hidden grid grid-cols-3 w-full items-center">
+            {/* Mobile Hamburger - Left */}
+            <button
+              className="p-2 hover:bg-cream rounded-lg transition-colors justify-self-start"
+              onClick={() => setIsOpen(!isOpen)}
+              aria-label="Toggle menu"
+            >
+              {isOpen ? (
+                <X className="w-6 h-6 text-black" />
+              ) : (
+                <Menu className="w-6 h-6 text-black" />
+              )}
+            </button>
+
+            {/* Mobile Logo - Center */}
+            <Link href="/" className="flex items-center justify-self-center">
+              <motion.div
+                className="relative h-16 w-16 sm:h-20 sm:w-20"
+                whileHover={{ scale: 1.05 }}
+              >
+                <Image
+                  src="/Logo.png"
+                  alt="The Black Tie Chandelier Gala"
+                  fill
+                  className="object-contain"
+                  priority
+                />
+              </motion.div>
+            </Link>
+
+            {/* Mobile Cart - Right */}
+            <button
+              onClick={openCart}
+              className="relative p-2 hover:bg-cream rounded-lg transition-colors group justify-self-end"
+              aria-label="Shopping cart"
+            >
+              <ShoppingBag className="w-5 h-5 text-charcoal group-hover:text-black transition-colors" />
+              {getItemCount() > 0 && (
+                <motion.span
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  className="absolute -top-1 -right-1 w-5 h-5 bg-gold text-black text-xs font-bold rounded-full flex items-center justify-center shadow-lg"
+                >
+                  {getItemCount() > 9 ? '9+' : getItemCount()}
+                </motion.span>
+              )}
+            </button>
+          </div>
+
+          {/* Desktop Layout */}
+          {/* Desktop Logo - Left */}
+          <Link href="/" className="hidden lg:flex items-center">
+            <motion.div
+              className="relative h-20 w-20 sm:h-20 sm:w-20 md:h-30 md:w-30"
               whileHover={{ scale: 1.05 }}
             >
-              Bea Foster
-            </motion.span>
+              <Image
+                src="/Logo.png"
+                alt="The Black Tie Chandelier Gala"
+                fill
+                className="object-contain"
+                priority
+              />
+            </motion.div>
           </Link>
 
           {/* Desktop Navigation */}
@@ -135,36 +193,6 @@ export default function Navbar() {
             </button>
           </div>
 
-          {/* Mobile Menu Button & Cart */}
-          <div className="lg:hidden flex items-center gap-2">
-            <button
-              onClick={openCart}
-              className="relative p-2 hover:bg-cream rounded-lg transition-colors group"
-              aria-label="Shopping cart"
-            >
-              <ShoppingBag className="w-5 h-5 text-charcoal group-hover:text-black transition-colors" />
-              {getItemCount() > 0 && (
-                <motion.span
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  className="absolute -top-1 -right-1 w-5 h-5 bg-gold text-black text-xs font-bold rounded-full flex items-center justify-center shadow-lg"
-                >
-                  {getItemCount() > 9 ? '9+' : getItemCount()}
-                </motion.span>
-              )}
-            </button>
-            <button
-              className="p-2 hover:bg-cream rounded-lg transition-colors"
-              onClick={() => setIsOpen(!isOpen)}
-              aria-label="Toggle menu"
-            >
-              {isOpen ? (
-                <X className="w-6 h-6 text-black" />
-              ) : (
-                <Menu className="w-6 h-6 text-black" />
-              )}
-            </button>
-          </div>
         </div>
       </div>
 

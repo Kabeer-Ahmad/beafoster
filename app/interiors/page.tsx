@@ -308,12 +308,12 @@ export default function Interiors() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 max-w-5xl mx-auto">
             {[
               {
-                quote: 'Bea Foster transformed our home into a masterpiece. Every detail was perfect, and the attention to quality is unmatched.',
+                quote: 'The Black Tie Chandelier Gala transformed our home into a masterpiece. Every detail was perfect, and the attention to quality is unmatched.',
                 author: 'Sarah Mitchell',
                 role: 'Residential Client',
               },
               {
-                quote: 'Working with Bea Foster was an absolute pleasure. They understood our vision and brought it to life beyond our expectations.',
+                quote: 'Working with The Black Tie Chandelier Gala was an absolute pleasure. They understood our vision and brought it to life beyond our expectations.',
                 author: 'James Anderson',
                 role: 'Commercial Client',
               },

@@ -148,8 +148,9 @@ export default function Home() {
             transition={{ delay: 0.3, duration: 0.8 }}
             className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-serif text-black mb-4 sm:mb-6 leading-tight px-4 relative inline-block"
           >
-            <span className="relative">
-              Bea Foster
+            <span className="relative block">
+              <span className="block">The Black Tie</span>
+              <span className="block">Chandelier Gala</span>
               {/* Decorative underline */}
               <motion.div
                 initial={{ scaleX: 0 }}
@@ -237,7 +238,7 @@ export default function Home() {
               variants={fadeUpVariants}
               className="text-base sm:text-lg md:text-xl text-charcoal leading-relaxed mb-4 sm:mb-6"
             >
-              Bea Foster represents the pinnacle of luxury fashion, interior design,
+              The Black Tie Chandelier Gala represents the pinnacle of luxury fashion, interior design,
               and editorial excellence. With over 15 years of experience, we have
               established ourselves as a premier destination for those who seek
               unparalleled sophistication and timeless elegance.

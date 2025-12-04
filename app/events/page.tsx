@@ -47,7 +47,7 @@ export default function Events() {
       date: 'June 5, 2024',
       time: '6:00 PM',
       title: 'Couture Atelier Open House',
-      location: 'Bea Foster Studio, Milan',
+      location: 'The Black Tie Chandelier Gala Studio, Milan',
       category: 'Fashion',
       description: 'Experience the artistry behind our couture creations. Tour our atelier and meet the artisans who bring our designs to life.',
       image: 'https://images.unsplash.com/photo-1445205170230-053b83016050?w=800&q=80',

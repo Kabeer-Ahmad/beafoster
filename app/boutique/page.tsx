@@ -55,7 +55,7 @@ export default function Boutique() {
     },
     {
       id: 5,
-      name: 'Bea Foster Magazine Collection',
+      name: 'The Black Tie Chandelier Gala Magazine Collection',
       price: 45,
       category: 'books',
       image: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=600&q=80',

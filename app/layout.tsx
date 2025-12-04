@@ -18,7 +18,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Bea Foster | Couture, Interiors & Editorial",
+  title: "The Black Tie Chandelier Gala",
   description: "Luxury fashion, interior design, and editorial excellence",
 };
 

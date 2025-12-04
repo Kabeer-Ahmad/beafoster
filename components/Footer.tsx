@@ -70,7 +70,8 @@ export default function Footer() {
             >
               <Link href="/" className="inline-block mb-4 sm:mb-6">
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-white mb-3 sm:mb-4">
-                  Bea Foster
+                  <span className="block">The Black Tie</span>
+                  <span className="block">Chandelier Gala</span>
                 </h2>
                 <div className="w-12 sm:w-16 h-px bg-gold" />
               </Link>
@@ -232,7 +233,7 @@ export default function Footer() {
         >
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-6">
             <p className="text-xs sm:text-sm text-gray-400 text-center sm:text-left">
-              © {new Date().getFullYear()} Bea Foster. All rights reserved.
+              © {new Date().getFullYear()} The Black Tie Chandelier Gala. All rights reserved.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 md:gap-6 lg:gap-8 text-xs sm:text-sm text-gray-400">
               <Link 

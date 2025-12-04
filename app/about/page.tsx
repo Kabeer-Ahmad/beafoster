@@ -9,7 +9,7 @@ export default function About() {
   const y = useTransform(scrollYProgress, [0, 1], ['0%', '50%']);
 
   const timeline = [
-    { year: '2008', title: 'The Beginning', description: 'Bea Foster was founded with a vision to redefine luxury fashion and design.' },
+    { year: '2008', title: 'The Beginning', description: 'The Black Tie Chandelier Gala was founded with a vision to redefine luxury fashion and design.' },
     { year: '2012', title: 'First Atelier', description: 'Opened our flagship atelier in the heart of the fashion district.' },
     { year: '2015', title: 'Interior Design Launch', description: 'Expanded into luxury interior design, transforming spaces worldwide.' },
     { year: '2018', title: 'Magazine Launch', description: 'Launched our acclaimed editorial magazine, celebrating art and culture.' },
@@ -61,7 +61,7 @@ export default function About() {
               <div className="relative w-full h-full">
                 <Image
                   src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=800&q=80"
-                  alt="Bea Foster Portrait"
+                  alt="The Black Tie Chandelier Gala Portrait"
                   fill
                   className="object-cover grayscale hover:grayscale-0 transition-all duration-700"
                 />
@@ -96,7 +96,7 @@ export default function About() {
                 className="space-y-4 md:space-y-6 text-base md:text-lg text-charcoal leading-relaxed"
               >
                 <p>
-                  Founded in 2008, Bea Foster emerged from a singular vision: to create a world where 
+                  Founded in 2008, The Black Tie Chandelier Gala emerged from a singular vision: to create a world where 
                   couture, interior design, and editorial excellence converge into a seamless expression 
                   of luxury and sophistication.
                 </p>
