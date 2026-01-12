@@ -28,6 +28,7 @@ export default function Navbar() {
       name: 'Services',
       href: '#',
       dropdown: [
+        { name: 'All Services', href: '/services' },
         { name: 'Fashion', href: '/fashion' },
         { name: 'Interiors', href: '/interiors' },
       ],
@@ -44,11 +45,10 @@ export default function Navbar() {
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
           ? 'bg-white/95 backdrop-blur-md shadow-sm'
           : 'bg-white/80 backdrop-blur-sm'
-      }`}
+        }`}
     >
       <div className="container-luxury">
         <div className="flex lg:flex-row items-center justify-between h-16 sm:h-20">
@@ -208,7 +208,7 @@ export default function Navbar() {
               onClick={() => setIsOpen(false)}
               className="lg:hidden fixed inset-0 bg-black/50 z-40 top-16 sm:top-20"
             />
-            
+
             {/* Mobile Menu Panel */}
             <motion.div
               initial={{ opacity: 0, y: -20 }}
@@ -256,7 +256,7 @@ export default function Navbar() {
                     </motion.div>
                   ))}
                 </div>
-                
+
                 {/* Mobile CTA Buttons */}
                 <div className="mt-6 sm:mt-8 pt-6 sm:pt-8 border-t border-beige space-y-3">
                   <Link

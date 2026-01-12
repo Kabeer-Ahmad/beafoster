@@ -8,38 +8,6 @@ export default function About() {
   const { scrollYProgress } = useScroll();
   const y = useTransform(scrollYProgress, [0, 1], ['0%', '50%']);
 
-  const timeline = [
-    { year: '2008', title: 'The Beginning', description: 'The Black Tie Chandelier Gala was founded with a vision to redefine luxury fashion and design.' },
-    { year: '2012', title: 'First Atelier', description: 'Opened our flagship atelier in the heart of the fashion district.' },
-    { year: '2015', title: 'Interior Design Launch', description: 'Expanded into luxury interior design, transforming spaces worldwide.' },
-    { year: '2018', title: 'Magazine Launch', description: 'Launched our acclaimed editorial magazine, celebrating art and culture.' },
-    { year: '2020', title: 'Global Recognition', description: 'Received international acclaim and multiple prestigious awards.' },
-    { year: '2023', title: 'Masterclass Series', description: 'Launched exclusive masterclass series, sharing expertise with the world.' },
-  ];
-
-  const philosophy = [
-    {
-      icon: Heart,
-      title: 'Passion',
-      description: 'Every creation is born from an unwavering passion for excellence and beauty.',
-    },
-    {
-      icon: Award,
-      title: 'Excellence',
-      description: 'We pursue perfection in every detail, setting new standards in luxury design.',
-    },
-    {
-      icon: Lightbulb,
-      title: 'Innovation',
-      description: 'Blending timeless elegance with contemporary vision and cutting-edge techniques.',
-    },
-    {
-      icon: BookOpen,
-      title: 'Storytelling',
-      description: 'Each piece tells a story, weaving narratives of sophistication and artistry.',
-    },
-  ];
-
   const mediaLogos = [
     { name: 'VOGUE' },
     { name: 'ELLE' },
@@ -49,42 +17,42 @@ export default function About() {
 
   return (
     <div className="pt-20">
-      {/* Hero Section - Split Layout */}
-      <section className="min-h-[60vh] sm:min-h-[70vh] md:min-h-[80vh] lg:min-h-screen flex items-center bg-cream relative overflow-hidden py-8 sm:py-12 md:py-16 lg:py-0">
+      {/* Hero Section - About Dr. Bea */}
+      <section className="min-h-[60vh] sm:min-h-[70vh] md:min-h-[80vh] flex items-center bg-cream relative overflow-hidden py-12 sm:py-16 md:py-24">
         <div className="container-luxury w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-20 items-center">
-            {/* Left: Parallax Portrait Image */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-20 items-start">
+            {/* Left: Image */}
             <motion.div
               style={{ y }}
-              className="relative h-[400px] sm:h-[500px] md:h-[600px] lg:h-[700px] order-2 lg:order-1"
+              className="relative w-full order-2 lg:order-1"
             >
-              <div className="relative w-full h-full">
+              <div className="relative w-full">
                 <Image
-                  src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=800&q=80"
-                  alt="The Black Tie Chandelier Gala Portrait"
-                  fill
-                  className="object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                  src="/Pictures 4/AboutBea.jpg"
+                  alt="Dr. Bea Foster"
+                  width={800}
+                  height={1000}
+                  className="w-full h-auto object-cover grayscale hover:grayscale-0 transition-all duration-700"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
               </div>
               {/* Decorative Frame */}
-              <div className="absolute -inset-2 md:-inset-4 border-2 border-gold/30 opacity-50" />
+              <div className="absolute -inset-2 md:-inset-4 border-2 border-gold/30 opacity-50 pointer-events-none" />
             </motion.div>
 
-            {/* Right: Brand Story */}
+            {/* Right: Bio Content */}
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
-              className="order-1 lg:order-2"
+              className="order-1 lg:order-2 space-y-6"
             >
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
               >
-                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif text-black mb-4 md:mb-6 leading-tight">
-                  Our Story
+                <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif text-black mb-4 md:mb-6 leading-tight">
+                  About Dr. Bea Foster, Ph.D.
                 </h1>
                 <div className="w-20 h-px bg-gold mb-6 md:mb-8" />
               </motion.div>
@@ -96,153 +64,125 @@ export default function About() {
                 className="space-y-4 md:space-y-6 text-base md:text-lg text-charcoal leading-relaxed"
               >
                 <p>
-                  Founded in 2008, The Black Tie Chandelier Gala emerged from a singular vision: to create a world where 
-                  couture, interior design, and editorial excellence converge into a seamless expression 
-                  of luxury and sophistication.
+                  Bea Foster, Ph.D., is a widely respected designer whose name has become synonymous with fashion, beauty, and interior design. For more than 50 years, her dedication, hard work, and distinctive vision have made her one of the most sought-after designers in Columbus, Ohio and beyond.
                 </p>
                 <p>
-                  What began as a small atelier has evolved into a globally recognized brand, 
-                  celebrated for our unwavering commitment to craftsmanship, innovation, and the 
-                  timeless art of storytelling through design.
+                  In 2000, Bea opened her first design studio in Columbus. Alongside her talented design team, she specialized in custom window treatments, accessories, and original art—featuring exclusive pieces by one of her favorite American artists, Mrs. Mary Ann Anderson. Her exquisite drapery work earned her the affectionate title “The Queen of Swags.”
                 </p>
                 <p>
-                  Today, we continue to push boundaries, creating experiences that transcend the 
-                  ordinary and celebrate the extraordinary in every detail.
+                  Never one to limit her creativity, Bea expanded into fashion with a specialty line of men’s and women’s wear, all personally designed by her. She also shares her expertise by teaching sewing, design, and modeling to both adults and young students. After her dynamic involvement with the legendary Ebony Fashion Shows, Bea was appointed by Mayor Michael B. Coleman to the board of the Columbus Historical Society, where she served from 2008 to 2011.
                 </p>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.6 }}
-                className="mt-8 md:mt-10 flex flex-wrap items-center gap-4 md:gap-6"
-              >
-                <div className="flex flex-col">
-                  <span className="text-3xl md:text-4xl font-serif text-gold">15+</span>
-                  <span className="text-xs md:text-sm uppercase tracking-wider text-charcoal">Years</span>
-                </div>
-                <div className="w-px h-8 md:h-12 bg-gold/30" />
-                <div className="flex flex-col">
-                  <span className="text-3xl md:text-4xl font-serif text-gold">500+</span>
-                  <span className="text-xs md:text-sm uppercase tracking-wider text-charcoal">Clients</span>
-                </div>
-                <div className="w-px h-8 md:h-12 bg-gold/30" />
-                <div className="flex flex-col">
-                  <span className="text-3xl md:text-4xl font-serif text-gold">200+</span>
-                  <span className="text-xs md:text-sm uppercase tracking-wider text-charcoal">Projects</span>
-                </div>
+                <p>
+                  Her work and influence have been featured in numerous media outlets, including The Columbus Dispatch, Columbus Monthly, and Buckeye Lifestyle Magazine. In 2019, she graced the cover of The Columbus Dispatch—a moment of recognition that moved her to tears. In 2025, she was honored as Model of the Year by the Columbus Fashion Council and her loving fans.
+                </p>
+                <p>
+                  Bea also ventured into the beauty and lifestyle world with the launch of <strong>Honey Bea</strong>, a luxurious body-care and pampering line for both men and women. Honey Bea has since expanded to include travel bags and personalized athletic wear in her signature black-and-white palette. Inspired by the brand’s success, her son introduced the complementary line <strong>B. Sporty</strong>, which will be formally launched for the New Year 2026.
+                </p>
+                <p>
+                  A prolific author, her memoir <em>Designing In The Dark</em> was published in 2019, followed by <em>Bea And Beauty</em> in 2020. She is currently writing her third book, <em>Thriving Beyond The Darkness</em>—a second look at life, strength, and never giving up.
+                </p>
+                <p>
+                  Deeply committed to her community, Bea is active in civic and professional organizations and chairs several women’s civic groups. Bilingual in English and Greek (mastered during her travels to Athens and Mykonos in 1960), she blends global perspective with local impact.
+                </p>
               </motion.div>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Timeline Section */}
-      <section id="timeline" className="py-16 md:py-24 lg:py-32 bg-white">
-        <div className="container-luxury">
+      {/* From the Heart Section */}
+      <section className="py-16 md:py-24 lg:py-32 bg-white">
+        <div className="container-luxury max-w-4xl mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-12 md:mb-16 lg:mb-20"
+            className="text-center mb-12"
           >
-            <h2 className="text-4xl sm:text-5xl md:text-6xl font-serif text-black mb-4">
-              Our Journey
-            </h2>
+            <h2 className="text-4xl sm:text-5xl font-serif text-black mb-6">From the Heart of Dr. Bea</h2>
             <div className="w-24 h-px bg-gold mx-auto" />
           </motion.div>
 
-          <div className="relative max-w-4xl mx-auto">
-            {/* Vertical Center Line */}
-            <div className="absolute left-1/2 top-0 bottom-0 w-px bg-gold/20 transform -translate-x-1/2 hidden md:block" />
+          <div className="space-y-6 text-lg text-charcoal leading-relaxed text-center">
+            <p>
+              I truly love what I do. Giving back warms my heart and brings me great joy. My deepest desire is to strengthen the weak, to help them stand taller, walk in confidence, and become stronger.
+            </p>
+            <p>
+              The Black Tie Chandelier is more than an elegant event—it is a building platform I will use to help others grow. Through my online courses and programs, I want to change lives for the better, both inside and out.
+            </p>
+            <p>
+              After losing two precious granddaughters to cancer, I knew I had to find a way to keep their memory alive and to be part of the change that leads to healing and, one day, a cure. On the wings of those two little butterflies we lost, I continue to move forward—creating spaces, experiences, and opportunities that help others feel good about themselves, rediscover their beauty, and believe in their future.
+            </p>
 
-            {/* Timeline Items */}
-            <div className="space-y-12 md:space-y-16 lg:space-y-24">
-              {timeline.map((item, index) => (
-                <motion.div
-                  key={item.year}
-                  initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true, margin: '-100px' }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className={`relative flex flex-col md:flex-row items-center gap-6 md:gap-8 ${
-                    index % 2 === 0 ? 'md:flex-row-reverse' : ''
-                  }`}
-                >
-                  {/* Year Circle */}
-                  <div className="relative z-10 flex-shrink-0 w-full md:w-32 lg:w-40">
-                    <div className="text-center">
-                      <div className="inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 bg-gold/10 rounded-full border-2 border-gold/30 mb-4">
-                        <span className="text-xl sm:text-2xl md:text-3xl font-serif text-gold font-bold">
-                          {item.year}
-                        </span>
-                      </div>
-                    </div>
-                  </div>
+            <blockquote className="border-t border-b border-gold/20 py-8 my-8 font-serif italic text-2xl text-black">
+              “The sky is the limit—all you have to do is reach for it.<br />
+              Your path has been cleared, the mountains have been moved,<br />
+              the door has been opened.<br />
+              All you have to do is walk through with a smile, grace, elegance, and determination.”
+            </blockquote>
 
-                  {/* Content Card */}
-                  <div className="flex-1 w-full bg-cream p-6 sm:p-8 md:p-10 rounded-lg border border-beige hover:shadow-xl transition-shadow relative z-30">
-                    <h3 className="text-xl sm:text-2xl md:text-3xl font-serif text-black mb-2 md:mb-3">
-                      {item.title}
-                    </h3>
-                    <p className="text-sm sm:text-base text-charcoal leading-relaxed">
-                      {item.description}
-                    </p>
-                  </div>
+            <p>
+              If you are ready to grow, we are here for you—to direct you, guide you, inspire you, and encourage you in every way to become the person you truly want to BEA.
+            </p>
 
-                  {/* Center Dot */}
-                  <div className="absolute left-1/2 top-8 sm:top-10 md:top-12 transform -translate-x-1/2 w-3 h-3 sm:w-4 sm:h-4 bg-gold rounded-full hidden md:block z-20" />
-                </motion.div>
-              ))}
+            <div className="bg-cream p-8 mt-8 border border-gold/30">
+              <h3 className="font-serif text-2xl mb-6">We want you to BEA:</h3>
+              <ul className="space-y-3 font-medium uppercase tracking-wider text-sm sm:text-base">
+                <li>BEA beautiful</li>
+                <li>BEA adventurous</li>
+                <li>BEA abundant and blessed</li>
+                <li>BEA brave enough to never give up or give in</li>
+              </ul>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Philosophy Section */}
-      <section id="philosophy" className="py-16 md:py-24 lg:py-32 bg-beige">
-        <div className="container-luxury">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-12 md:mb-16 lg:mb-20"
-          >
-            <h2 className="text-4xl sm:text-5xl md:text-6xl font-serif text-black mb-4">
-              Our Philosophy
-            </h2>
-            <div className="w-24 h-px bg-gold mx-auto mb-4" />
-            <p className="text-base md:text-lg text-charcoal max-w-2xl mx-auto px-4">
-              The principles that guide every creation, every design, and every moment we share with you.
-            </p>
-          </motion.div>
+      {/* Meet My Right Hand Section */}
+      <section className="py-16 md:py-24 lg:py-32 bg-beige relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-gold rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2" />
+        </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-            {philosophy.map((item, index) => {
-              const Icon = item.icon;
-              return (
-                <motion.div
-                  key={item.title}
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.15, duration: 0.6 }}
-                  className="bg-white p-6 md:p-8 rounded-lg border border-beige hover:shadow-xl transition-all duration-300 group"
-                >
-                  <div className="mb-4 md:mb-6 flex justify-center">
-                    <div className="p-3 md:p-4 bg-gold/10 rounded-full group-hover:bg-gold/20 transition-colors">
-                      <Icon className="w-6 h-6 md:w-8 md:h-8 text-gold" />
-                    </div>
-                  </div>
-                  <h3 className="text-xl md:text-2xl font-serif text-black mb-3 md:mb-4 text-center">
-                    {item.title}
-                  </h3>
-                  <p className="text-sm md:text-base text-charcoal leading-relaxed text-center">
-                    {item.description}
-                  </p>
-                </motion.div>
-              );
-            })}
+        <div className="container-luxury max-w-5xl mx-auto px-4 relative z-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-black mb-6">Meet My Right Hand</h2>
+              <div className="w-20 h-px bg-gold mb-6" />
+              <h3 className="text-2xl font-serif text-black mb-4">Dr. Mellinda DePriest</h3>
+              <div className="space-y-4 text-charcoal leading-relaxed">
+                <p>
+                  Dr. Mellinda DePriest is my trusted assistant and right hand. With a joyful spirit and a heart for people, she helps keep every detail moving in the right direction—from projects and planning to communication and follow-through.
+                </p>
+                <p>
+                  Working alongside me between Arizona and Ohio, Dr. Mellinda supports the vision behind The Black Tie Chandelier, our online courses, and our community outreach. She is often the friendly voice and smiling face that greets our guests, answers questions, and makes sure everyone feels welcomed, seen, and supported.
+                </p>
+                <p>
+                  Her calm strength, warm laughter, and genuine care for others make her an essential part of everything we do.
+                </p>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="relative h-[400px] md:h-[500px]"
+            >
+              <div className="absolute inset-4 border border-black/10 z-0 transform rotate-3" />
+              <div className="relative h-full w-full bg-charcoal overflow-hidden z-10">
+                <Image
+                  src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=800&q=80"
+                  alt="Dr. Mellinda DePriest"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -257,11 +197,11 @@ export default function About() {
             className="text-center mb-8 md:mb-12"
           >
             <h2 className="text-4xl sm:text-5xl md:text-6xl font-serif text-black mb-4">
-              As Seen In
+              Legacy & Recognition
             </h2>
             <div className="w-24 h-px bg-gold mx-auto mb-4 md:mb-6" />
             <p className="text-base md:text-lg text-charcoal max-w-2xl mx-auto px-4">
-              Featured in the world's most prestigious publications and media outlets
+              Celebrating over 50 years of excellence in fashion, design, and service
             </p>
           </motion.div>
 
@@ -287,4 +227,3 @@ export default function About() {
     </div>
   );
 }
-

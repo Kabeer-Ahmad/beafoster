@@ -29,23 +29,23 @@ export default function Home() {
 
   const boutiqueProducts = {
     fashion: [
-      { id: 1, name: 'Couture Evening Dress', price: 2500, image: 'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=600&q=80' },
-      { id: 2, name: 'Cashmere Wrap', price: 450, image: 'https://images.unsplash.com/photo-1483985988355-763728e1935b?w=600&q=80' },
-      { id: 3, name: 'Designer Blazer', price: 850, image: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600&q=80' },
-      { id: 4, name: 'Silk Evening Gown', price: 1800, image: 'https://images.unsplash.com/photo-1445205170230-053b83016050?w=600&q=80' },
+      { id: 'BSHOODIEB', name: 'Hoodie Black', price: 0, image: '/BSPORTY/BSHOODIEB/unisex-heavy-blend-hoodie-black-front-6952cd1a5f854.jpg' },
+      { id: 'BSHatB', name: 'Hat B', price: 0, image: '/BSPORTY/BSHatB/classic-dad-hat-black-front-6931c9111da74.jpg' },
+      { id: 'BSLongSleeveB', name: 'Long Sleeve Black', price: 0, image: '/BSPORTY/BSLongSleeveB/unisex-garment-dyed-heavyweight-long-sleeve-shirt-black-front-6931c719aa2c6.jpg' },
+      { id: 'BSSweatpantsB', name: 'Sweatpants Black', price: 0, image: '/BSPORTY/BSSweatpantsB/unisex-fleece-sweatpants-black-front-6931c86884b88.jpg' },
     ],
     accessories: [
-      { id: 5, name: 'Luxury Silk Scarf', price: 285, image: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80' },
-      { id: 6, name: 'Designer Handbag', price: 1200, image: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600&q=80' },
-      { id: 7, name: 'Designer Sunglasses', price: 320, image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&q=80' },
-      { id: 8, name: 'Designer Jewelry Box', price: 220, image: 'https://images.unsplash.com/photo-1511578314322-379afb476865?w=600&q=80' },
+      { id: 'BSDuffleAB', name: 'Duffle A B', price: 0, image: '/BSPORTY/BSDuffleAB/all-over-print-duffle-bag-white-front-6931db0dbfbfd.jpg' },
+      { id: 'BSToteB', name: 'Tote Black', price: 0, image: '/BSPORTY/BSToteB/all-over-print-large-tote-bag-w-pocket-black-front-6931cac8c000a.jpg' },
+      { id: 'BSTumblerLogoB', name: 'Tumbler Black', price: 0, image: '/BSPORTY/BSTumblerLogoB/stainless-steel-tumbler-black-front-6931dea66be41.jpg' },
+      { id: 'BSFannyB', name: 'Fanny Pack', price: 0, image: '/BSPORTY/BSFannyB/all-over-print-fanny-pack-white-front-6931e52bb839e.jpg' },
     ],
-    interior: [
-      { id: 9, name: 'Luxury Candle Set', price: 95, image: 'https://images.unsplash.com/photo-1445205170230-053b83016050?w=600&q=80' },
-      { id: 10, name: 'Artisan Vase Collection', price: 180, image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80' },
-      { id: 11, name: 'Silk Pillow Set', price: 165, image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80' },
-      { id: 12, name: 'Designer Throw Blanket', price: 195, image: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=600&q=80' },
-    ],
+    home: [
+      { id: 'BSBlanketBoxW', name: 'Blanket Box', price: 0, image: '/BSPORTY/BSBlanketBoxW/throw-blanket-50x60-front-6931dd58613a8.jpg' },
+      { id: 'BSMugBS', name: 'Mug B S', price: 0, image: '/BSPORTY/BSMugBS/enamel-mug-white-12-oz-front-6931cba939d13.jpg' },
+      { id: 'BSPillowB', name: 'Pillow Black', price: 0, image: '/BSPORTY/BSPillowB/all-over-print-basic-pillow-18x18-front-6931ccc50feb6.jpg' },
+      { id: 'BSPoster', name: 'Framed Poster', price: 0, image: '/BSPORTY/BSPoster/matte-paper-framed-poster-with-mat-(in)-black-12x16-front-6931ddf2bc22e.jpg' },
+    ]
   };
 
   return (
@@ -79,7 +79,7 @@ export default function Home() {
             transition={{ duration: 1.5, delay: 0.7 }}
             className="absolute bottom-1/4 left-0 right-0 h-px bg-gold/30"
           />
-          
+
           {/* Decorative Circles */}
           <motion.div
             initial={{ opacity: 0, scale: 0 }}
@@ -137,7 +137,7 @@ export default function Home() {
             className="mb-4 sm:mb-6"
           >
             <span className="inline-block text-xs sm:text-sm uppercase tracking-[0.3em] text-charcoal/70 border-t border-b border-gold/30 py-2 px-4">
-              Since 2008
+              Welcome
             </span>
           </motion.div>
 
@@ -169,12 +169,9 @@ export default function Home() {
             className="mb-6 sm:mb-8 md:mb-10 px-4"
           >
             <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-charcoal tracking-[0.2em] uppercase font-light mb-2">
-              Couture, Interiors, & Editorial
+              Dr. Bea Foster, Ph.D.
             </p>
             <div className="w-16 sm:w-20 h-px bg-gold mx-auto my-4" />
-            <p className="text-sm sm:text-base md:text-lg text-charcoal/70 max-w-2xl mx-auto font-light leading-relaxed">
-              Crafting timeless elegance through bespoke fashion, transformative interiors, and editorial excellence
-            </p>
           </motion.div>
 
           {/* CTA Buttons */}
@@ -189,7 +186,7 @@ export default function Home() {
               className="group relative w-full sm:w-auto px-8 sm:px-10 py-4 sm:py-5 bg-black text-white text-sm sm:text-base font-medium hover:bg-charcoal transition-all duration-300 uppercase tracking-wider flex items-center justify-center gap-2 overflow-hidden"
             >
               <span className="relative z-10 flex items-center gap-2">
-                Explore
+                Read More
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </span>
               <motion.div
@@ -199,26 +196,11 @@ export default function Home() {
                 transition={{ duration: 0.3 }}
               />
             </Link>
-            <Link
-              href="/boutique"
-              className="group relative w-full sm:w-auto px-8 sm:px-10 py-4 sm:py-5 border-2 border-black text-black text-sm sm:text-base font-medium hover:bg-black hover:text-white transition-all duration-300 uppercase tracking-wider flex items-center justify-center gap-2 overflow-hidden"
-            >
-              <span className="relative z-10 flex items-center gap-2">
-                Shop Boutique
-                <ShoppingBag className="w-4 h-4" />
-              </span>
-              <motion.div
-                className="absolute inset-0 bg-black -z-10"
-                initial={{ scale: 0 }}
-                whileHover={{ scale: 1 }}
-                transition={{ duration: 0.3 }}
-              />
-            </Link>
           </motion.div>
         </motion.div>
       </section>
 
-      {/* Brief About Section */}
+      {/* Welcome Letter Section */}
       <section className="py-12 sm:py-16 md:py-24 lg:py-32 bg-white">
         <div className="container-luxury px-4 sm:px-0">
           <motion.div
@@ -232,25 +214,86 @@ export default function Home() {
               variants={fadeUpVariants}
               className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif text-black mb-6 sm:mb-8"
             >
-              Crafting Luxury Since 2008
+              Welcome to The Black Tie Chandelier
             </motion.h2>
-            <motion.p
-              variants={fadeUpVariants}
-              className="text-base sm:text-lg md:text-xl text-charcoal leading-relaxed mb-4 sm:mb-6"
-            >
-              The Black Tie Chandelier Gala represents the pinnacle of luxury fashion, interior design,
-              and editorial excellence. With over 15 years of experience, we have
-              established ourselves as a premier destination for those who seek
-              unparalleled sophistication and timeless elegance.
-            </motion.p>
-            <motion.p
-              variants={fadeUpVariants}
-              className="text-base sm:text-lg text-charcoal leading-relaxed mb-0"
-            >
-              From bespoke couture creations to transformative interior spaces and
-              our acclaimed editorial magazine, every aspect of our work reflects
-              our commitment to excellence and attention to detail.
-            </motion.p>
+
+            <motion.div variants={fadeUpVariants} className="text-left space-y-6 text-charcoal text-lg font-light leading-relaxed">
+              <p className="font-serif italic text-2xl text-center mb-8">Dear Friend,</p>
+
+              <p>Welcome. I am so grateful that you are here.</p>
+
+              <p>
+                My name is Dr. Bea Foster, Ph.D., and for more than fifty years I have lived in the world of design, fashion, beauty, and transformation.
+                I have dressed windows and rooms, walked runways, mentored women and men, and created spaces that make people feel seen, elegant, and at home.
+              </p>
+
+              <p>Today, my work has grown into something even deeper.</p>
+
+              <p>
+                The Black Tie Chandelier Gala and the programs connected to it were born from both great love and great loss.
+                After losing two precious granddaughters to cancer, I knew I had to find a way to keep their memory alive and to turn my pain into purpose.
+                On the wings of those two little butterflies, I chose to move forward—to help others feel good about themselves again, to strengthen the weak,
+                and to encourage healing, hope, and new beginnings.
+              </p>
+
+              <p className="font-medium text-black">This space—this website, this Gala, these courses—is part of that promise.</p>
+
+              <div className="bg-cream p-8 rounded-lg border border-gold/20 my-8">
+                <h3 className="font-serif text-2xl text-center mb-6">My heart’s desire is to:</h3>
+                <ul className="space-y-4 max-w-2xl mx-auto">
+                  <li className="flex items-start gap-3">
+                    <span className="text-gold text-xl">✦</span>
+                    <span>Help you rediscover your beauty, inside and out</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-gold text-xl">✦</span>
+                    <span>Encourage you to stand taller, walk in confidence, and believe in your future</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-gold text-xl">✦</span>
+                    <span>Offer elegant experiences and simple tools that help you grow, flourish, and feel fabulous at any age</span>
+                  </li>
+                </ul>
+              </div>
+
+              <blockquote className="border-l-4 border-gold pl-6 py-4 my-10 italic text-xl sm:text-2xl font-serif text-black/80">
+                “The sky is the limit—all you have to do is reach for it.
+                Your path has been cleared, the mountains have been moved,
+                the door has been opened.
+                All you have to do is walk through with a smile, grace, elegance, and determination.”
+              </blockquote>
+
+              <p>
+                If you are ready to upgrade your sense of style, renew your confidence, or simply step into a room—and into your life—with more grace and assurance,
+                you are in the right place and the right time.
+              </p>
+
+              <p>
+                Together with my right hand, Dr. Mellinda DePriest, and a growing circle of supporters, we are here to direct you, guide you, inspire you,
+                and encourage you in every way we can.
+              </p>
+
+              <div className="text-center my-10 space-y-4">
+                <h3 className="text-2xl font-serif mb-6">I want you to BEA:</h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl mx-auto">
+                  <div className="bg-charcoal text-white p-4 uppercase tracking-widest text-sm">BEA beautiful</div>
+                  <div className="bg-charcoal text-white p-4 uppercase tracking-widest text-sm">BEA adventurous</div>
+                  <div className="bg-charcoal text-white p-4 uppercase tracking-widest text-sm">BEA blessed and abundant</div>
+                  <div className="bg-charcoal text-white p-4 uppercase tracking-widest text-sm">BEA brave</div>
+                </div>
+                <p className="text-sm italic mt-2 text-gray-500">— never giving up and never giving in</p>
+              </div>
+
+              <p>
+                Thank you for visiting, for believing in what we are building, and for helping keep my granddaughters’ memory alive as we work to bring comfort, confidence, and change to others.
+              </p>
+
+              <div className="mt-12 text-center">
+                <p className="italic mb-2">With love, elegance, and gratitude,</p>
+                <div className="font-serif text-2xl font-bold">Dr. Bea Foster, Ph.D.</div>
+                <div className="text-sm uppercase tracking-wide text-gold mt-1">Founder, The Black Tie Chandelier Gala</div>
+              </div>
+            </motion.div>
           </motion.div>
         </div>
       </section>
@@ -326,11 +369,11 @@ export default function Home() {
             className="text-center mb-8 sm:mb-12 md:mb-16"
           >
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif text-black mb-3 sm:mb-4">
-              The Boutique
+              B. Sporty
             </h2>
-            <div className="w-20 sm:w-24 h-px bg-gold mx-auto mb-4 sm:mb-6" />
-            <p className="text-base sm:text-lg text-charcoal leading-relaxed max-w-2xl mx-auto mb-6 sm:mb-8">
-              Discover our curated collection of luxury fashion pieces, accessories, and home essentials
+            <div className="w-16 sm:w-20 h-px bg-gold mx-auto mb-4 sm:mb-6" />
+            <p className="text-sm sm:text-base text-charcoal/80 leading-relaxed max-w-2xl mx-auto mb-6 sm:mb-8 font-light">
+              Elevate your style with our exclusive sportswear and lifestyle collection
             </p>
             <Link
               href="/boutique"
@@ -364,22 +407,22 @@ export default function Home() {
                       href="/boutique"
                       className="group flex-shrink-0 w-48 sm:w-56"
                     >
-                      <div className="bg-cream border border-beige hover:shadow-lg transition-all duration-500">
-                        <div className="relative h-48 sm:h-56 bg-charcoal overflow-hidden">
-        <Image
+                      <div className="bg-white border border-beige/50 hover:shadow-xl transition-all duration-500">
+                        <div className="relative h-48 sm:h-56 bg-cream/30 overflow-hidden">
+                          <Image
                             src={product.image}
                             alt={product.name}
                             fill
-                            className="object-cover group-hover:scale-110 transition-transform duration-500"
+                            className="object-contain p-4 group-hover:scale-110 transition-transform duration-500"
                           />
                         </div>
-                        <div className="p-3 sm:p-4">
-                          <h4 className="text-sm sm:text-base font-serif text-black mb-2 line-clamp-2">
+                        <div className="p-3 sm:p-4 text-center">
+                          <h4 className="text-sm sm:text-base font-serif text-black mb-1 line-clamp-1">
                             {product.name}
                           </h4>
-                          <p className="text-lg sm:text-xl font-serif text-black">
-                            ${product.price.toLocaleString()}
-                          </p>
+                          <span className="text-xs uppercase tracking-wider text-gold">
+                            Contact to Purchase
+                          </span>
                         </div>
                       </div>
                     </Link>
@@ -434,22 +477,22 @@ export default function Home() {
                       href="/boutique"
                       className="group flex-shrink-0 w-48 sm:w-56"
                     >
-                      <div className="bg-cream border border-beige hover:shadow-lg transition-all duration-500">
-                        <div className="relative h-48 sm:h-56 bg-charcoal overflow-hidden">
+                      <div className="bg-white border border-beige/50 hover:shadow-xl transition-all duration-500">
+                        <div className="relative h-48 sm:h-56 bg-cream/30 overflow-hidden">
                           <Image
                             src={product.image}
                             alt={product.name}
                             fill
-                            className="object-cover group-hover:scale-110 transition-transform duration-500"
+                            className="object-contain p-4 group-hover:scale-110 transition-transform duration-500"
                           />
                         </div>
-                        <div className="p-3 sm:p-4">
-                          <h4 className="text-sm sm:text-base font-serif text-black mb-2 line-clamp-2">
+                        <div className="p-3 sm:p-4 text-center">
+                          <h4 className="text-sm sm:text-base font-serif text-black mb-1 line-clamp-1">
                             {product.name}
                           </h4>
-                          <p className="text-lg sm:text-xl font-serif text-black">
-                            ${product.price.toLocaleString()}
-                          </p>
+                          <span className="text-xs uppercase tracking-wider text-gold">
+                            Contact to Purchase
+                          </span>
                         </div>
                       </div>
                     </Link>
@@ -491,35 +534,35 @@ export default function Home() {
               className="flex flex-col"
             >
               <h3 className="text-xl sm:text-2xl font-serif text-black mb-4 sm:mb-6 text-center md:text-left">
-                Interior
+                Home
               </h3>
               <div className="relative">
                 <div
                   ref={interiorScrollRef}
                   className="flex gap-4 overflow-x-auto scrollbar-hide scroll-smooth pb-4"
                 >
-                  {boutiqueProducts.interior.map((product) => (
+                  {boutiqueProducts.home.map((product) => (
                     <Link
                       key={product.id}
                       href="/boutique"
                       className="group flex-shrink-0 w-48 sm:w-56"
                     >
-                      <div className="bg-cream border border-beige hover:shadow-lg transition-all duration-500">
-                        <div className="relative h-48 sm:h-56 bg-charcoal overflow-hidden">
+                      <div className="bg-white border border-beige/50 hover:shadow-xl transition-all duration-500">
+                        <div className="relative h-48 sm:h-56 bg-cream/30 overflow-hidden">
                           <Image
                             src={product.image}
                             alt={product.name}
                             fill
-                            className="object-cover group-hover:scale-110 transition-transform duration-500"
+                            className="object-contain p-4 group-hover:scale-110 transition-transform duration-500"
                           />
                         </div>
-                        <div className="p-3 sm:p-4">
-                          <h4 className="text-sm sm:text-base font-serif text-black mb-2 line-clamp-2">
+                        <div className="p-3 sm:p-4 text-center">
+                          <h4 className="text-sm sm:text-base font-serif text-black mb-1 line-clamp-1">
                             {product.name}
                           </h4>
-                          <p className="text-lg sm:text-xl font-serif text-black">
-                            ${product.price.toLocaleString()}
-                          </p>
+                          <span className="text-xs uppercase tracking-wider text-gold">
+                            Contact to Purchase
+                          </span>
                         </div>
                       </div>
                     </Link>
@@ -572,22 +615,10 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
             {[
               {
-                date: 'March 15, 2024',
-                title: 'Spring Collection Launch',
-                location: 'New York',
-                image: 'https://images.unsplash.com/photo-1511578314322-379afb476865?w=600&q=80',
-              },
-              {
-                date: 'April 22, 2024',
-                title: 'Interior Design Masterclass',
-                location: 'London',
-                image: 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=600&q=80',
-              },
-              {
-                date: 'May 10, 2024',
-                title: 'Magazine Release Party',
-                location: 'Paris',
-                image: 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=600&q=80',
+                date: 'Saturday, October 4, 2025',
+                title: 'The Black Tie Chandelier Gala',
+                location: 'The Grand Ballroom, DoubleTree by Hilton',
+                image: '/Pictures 4/1 (1).JPG',
               },
             ].map((event, index) => (
               <motion.div
@@ -601,7 +632,7 @@ export default function Home() {
                 <Link href="/events">
                   <div className="bg-white border border-beige overflow-hidden hover:shadow-xl transition-shadow">
                     <div className="relative h-48 sm:h-56 md:h-64 bg-charcoal">
-            <Image
+                      <Image
                         src={event.image}
                         alt={event.title}
                         fill
@@ -634,7 +665,7 @@ export default function Home() {
           <div className="absolute top-0 left-2/4 w-px h-full bg-gold hidden md:block" />
           <div className="absolute top-0 left-3/4 w-px h-full bg-gold hidden md:block" />
         </div>
-        
+
         <div className="container-luxury relative z-10 px-4 sm:px-0">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -647,7 +678,7 @@ export default function Home() {
             </h2>
             <div className="w-20 sm:w-24 h-px bg-gold mx-auto" />
           </motion.div>
-          
+
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 md:gap-12">
             {[
               { number: '15+', label: 'Years of Excellence', icon: Award },

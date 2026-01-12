@@ -2,405 +2,427 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { useRef } from 'react';
-import { Calendar, MapPin, Clock, Users, ArrowRight, Sparkles, Scissors, Home, BookOpen, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Calendar, MapPin, Clock, Star, Heart, CheckCircle2, Sparkles, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 
 export default function Events() {
-  const pastEventsScrollRef = useRef<HTMLDivElement>(null);
-  const upcomingEvents = [
-    {
-      id: 1,
-      date: 'March 15, 2024',
-      time: '7:00 PM',
-      title: 'Spring Collection Launch',
-      location: 'The Plaza, New York',
-      category: 'Fashion',
-      description: 'An exclusive evening showcasing our latest spring collection. Join us for a night of elegance, innovation, and style.',
-      image: 'https://images.unsplash.com/photo-1511578314322-379afb476865?w=800&q=80',
-      capacity: '150 Guests',
-    },
-    {
-      id: 2,
-      date: 'April 22, 2024',
-      time: '2:00 PM',
-      title: 'Interior Design Masterclass',
-      location: 'Claridge\'s, London',
-      category: 'Interiors',
-      description: 'Learn from our design experts as they share insights into creating luxurious, timeless interiors that reflect your personal style.',
-      image: 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800&q=80',
-      capacity: '80 Guests',
-    },
-    {
-      id: 3,
-      date: 'May 10, 2024',
-      time: '8:00 PM',
-      title: 'Magazine Release Party',
-      location: 'Hôtel de Crillon, Paris',
-      category: 'Magazine',
-      description: 'Celebrate the launch of our latest issue with an intimate gathering of industry leaders, creatives, and tastemakers.',
-      image: 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=800&q=80',
-      capacity: '200 Guests',
-    },
-    {
-      id: 4,
-      date: 'June 5, 2024',
-      time: '6:00 PM',
-      title: 'Couture Atelier Open House',
-      location: 'The Black Tie Chandelier Gala Studio, Milan',
-      category: 'Fashion',
-      description: 'Experience the artistry behind our couture creations. Tour our atelier and meet the artisans who bring our designs to life.',
-      image: 'https://images.unsplash.com/photo-1445205170230-053b83016050?w=800&q=80',
-      capacity: '50 Guests',
-    },
+
+  const highlights = [
+    "Three exclusive designers featured on the runway",
+    "Dr. Bea Foster walking for each designer in a specially designed outfit",
+    "Premiere of the Bea Sporty Line",
+    "First-ever debut of Sporty Eveningwear",
+    "Spectacular table décor and ambiance",
+    "Door prizes, giveaways, and an exciting auction",
+    "Two professional photographers + media coverage",
+    "Special guest arrival via luxury limo partner",
+    "Model of the Year 2026 crowning"
   ];
 
-  const pastEvents = [
+  const educationPrograms = [
     {
-      id: 1,
-      title: 'Winter Gala 2023',
-      date: 'December 2023',
-      location: 'New York',
-      image: 'https://images.unsplash.com/photo-1483985988355-763728e1935b?w=600&q=80',
+      title: "Model Development & Safety",
+      description: "Teaching models how to safely navigate the industry while building confidence, professionalism, and next-step readiness."
     },
     {
-      id: 2,
-      title: 'Design Symposium',
-      date: 'November 2023',
-      location: 'London',
-      image: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=600&q=80',
+      title: "Interior Design & Decorating Classes",
+      description: "Learning to enter and work professionally in clients' homes, selecting fabrics and finishes, and respect for property values."
     },
     {
-      id: 3,
-      title: 'Fashion Week Showcase',
-      date: 'September 2023',
-      location: 'Paris',
-      image: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=600&q=80',
-    },
-    {
-      id: 4,
-      title: 'Luxury Living Expo',
-      date: 'August 2023',
-      location: 'Milan',
-      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80',
-    },
-    {
-      id: 5,
-      title: 'Summer Soirée',
-      date: 'July 2023',
-      location: 'Monaco',
-      image: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80',
-    },
-    {
-      id: 6,
-      title: 'Art & Design Colloquium',
-      date: 'June 2023',
-      location: 'Vienna',
-      image: 'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=600&q=80',
-    },
-  ];
-
-  const eventCategories = [
-    {
-      icon: Sparkles,
-      title: 'Fashion Shows',
-      description: 'Exclusive runway presentations and collection launches',
-    },
-    {
-      icon: Home,
-      title: 'Design Workshops',
-      description: 'Hands-on masterclasses in interior design and styling',
-    },
-    {
-      icon: BookOpen,
-      title: 'Magazine Launches',
-      description: 'Intimate gatherings celebrating our latest publications',
-    },
-    {
-      icon: Scissors,
-      title: 'Atelier Experiences',
-      description: 'Behind-the-scenes tours of our creative studios',
-    },
+      title: "Life Skills & Daily Living",
+      description: "Focusing on decision-making skills, safeguarding children and families, and promoting community stability."
+    }
   ];
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white pt-20">
       {/* Hero Section */}
-      <section className="relative h-[50vh] sm:h-[60vh] md:h-[70vh] lg:h-[80vh] xl:h-[90vh] overflow-hidden">
+      <section className="relative h-[60vh] sm:h-[70vh] md:h-[80vh] overflow-hidden">
         <div className="absolute inset-0">
           <Image
             src="https://images.unsplash.com/photo-1511578314322-379afb476865?w=1600&q=80"
-            alt="Events Hero"
+            alt="The Black Tie Chandelier Gala"
             fill
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-black/30" />
         </div>
         <div className="relative h-full flex items-center justify-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center px-4"
+            className="text-center px-4 max-w-5xl mx-auto"
           >
-            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-serif text-white mb-6">
-              Events
+            <div className="text-gold text-lg md:text-xl font-medium tracking-[0.3em] uppercase mb-4">
+              11th Annual
+            </div>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-serif text-white mb-6 leading-tight">
+              The Black Tie<br />Chandelier Gala
             </h1>
-            <div className="w-32 h-px bg-gold mx-auto mb-6" />
-            <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto">
-              Curated experiences celebrating art, design, and luxury
+            <div className="w-32 h-px bg-gold mx-auto mb-8" />
+            <p className="text-xl md:text-3xl text-white/90 font-light tracking-wide mb-8">
+              An Evening of Elegance, Empowerment & Purpose
             </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-white/80 text-sm md:text-base tracking-wider uppercase">
+              <div className="flex items-center gap-2">
+                <Calendar className="w-5 h-5 text-gold" />
+                Sunday, October 25, 2026
+              </div>
+              <div className="hidden sm:block text-gold">•</div>
+              <div className="flex items-center gap-2">
+                <Clock className="w-5 h-5 text-gold" />
+                6:00 PM – 10:00 PM
+              </div>
+              <div className="hidden sm:block text-gold">•</div>
+              <div className="flex items-center gap-2">
+                <MapPin className="w-5 h-5 text-gold" />
+                Location: To Be Determined
+              </div>
+            </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Upcoming Events */}
-      <section className="py-16 md:py-24 lg:py-32 bg-white">
-        <div className="container-luxury">
+      {/* Intro Section */}
+      <section className="py-16 md:py-24 bg-white">
+        <div className="container-luxury max-w-4xl mx-auto px-4 text-center">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-3xl md:text-5xl font-serif text-black mb-8"
+          >
+            The Night You’ll Never Forget
+          </motion.h2>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="text-lg text-charcoal leading-relaxed space-y-6"
+          >
+            <p>
+              The Black Tie Chandelier Gala returns for its 11th year with an evening designed to celebrate elegance, creativity, and community impact.
+              This year’s gala brings a breathtaking runway experience featuring three exclusive designers, with Dr. Bea Foster gracing the runway for each designer in a custom, show-stopping outfit.
+            </p>
+            <p>
+              Guests can expect an atmosphere that is elegant, colorful, and fit for a queen—from the spectacular table décor to the unforgettable moments captured by two professional photographers.
+              The celebration will include door prizes, giveaways, and an exciting auction, with proceeds supporting The James Cancer Hospital in Columbus, Ohio, and Sickle Cell initiatives.
+            </p>
+            <div className="bg-cream p-6 border border-gold/30 rounded-lg inline-block my-6">
+              <p className="font-serif italic text-xl text-black">
+                "It will be a powerful reminder that fashion can be more than beauty—it can be purpose."
+              </p>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Highlights Grid */}
+      <section className="py-16 bg-charcoal text-white">
+        <div className="container-luxury px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-12 md:mb-16 lg:mb-20"
+            className="text-center mb-12"
           >
-            <h2 className="text-4xl sm:text-5xl md:text-6xl font-serif text-black mb-4">
-              Upcoming Events
-            </h2>
-            <div className="w-24 h-px bg-gold mx-auto mb-4" />
-            <p className="text-base md:text-lg text-charcoal max-w-2xl mx-auto">
-              Join us for exclusive gatherings, launches, and masterclasses
-            </p>
+            <h2 className="text-3xl md:text-5xl font-serif mb-4">What To Expect</h2>
+            <div className="w-24 h-px bg-gold mx-auto" />
           </motion.div>
 
-          <div className="space-y-12 md:space-y-16">
-            {upcomingEvents.map((event, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {highlights.map((item, index) => (
               <motion.div
-                key={event.id}
-                initial={{ opacity: 0, y: 60 }}
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.1, duration: 0.6 }}
-                className="group"
+                transition={{ delay: index * 0.1 }}
+                className="flex items-start gap-4 p-4 border border-white/10 hover:border-gold/50 transition-colors rounded-lg bg-white/5"
               >
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center bg-cream border border-beige hover:shadow-2xl transition-all duration-500">
-                  <div className="relative h-64 md:h-80 lg:h-96 overflow-hidden order-2 lg:order-1">
-                    <Image
-                      src={event.image}
-                      alt={event.title}
-                      fill
-                      className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110"
-                    />
-                    <div className="absolute top-4 left-4 bg-black/80 text-white px-4 py-2 text-sm uppercase tracking-wider">
-                      {event.category}
-                    </div>
-                  </div>
-                  <div className="p-8 md:p-12 order-1 lg:order-2">
-                    <div className="flex items-center gap-4 mb-4 text-sm text-charcoal">
-                      <div className="flex items-center gap-2">
-                        <Calendar className="w-4 h-4 text-gold" />
-                        <span>{event.date}</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <Clock className="w-4 h-4 text-gold" />
-                        <span>{event.time}</span>
-                      </div>
-                    </div>
-                    <h3 className="text-3xl md:text-4xl font-serif text-black mb-4">
-                      {event.title}
-                    </h3>
-                    <div className="flex items-center gap-2 text-charcoal mb-4">
-                      <MapPin className="w-4 h-4 text-gold" />
-                      <span>{event.location}</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-sm text-charcoal mb-6">
-                      <Users className="w-4 h-4 text-gold" />
-                      <span>{event.capacity}</span>
-                    </div>
-                    <p className="text-base md:text-lg text-charcoal mb-6 leading-relaxed">
-                      {event.description}
-                    </p>
-                    <button className="group/btn inline-flex items-center gap-2 px-8 py-3 bg-black text-white hover:bg-charcoal transition-colors text-sm uppercase tracking-wider">
-                      Reserve Your Place
-                      <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-                    </button>
-                  </div>
-                </div>
+                <Star className="w-6 h-6 text-gold flex-shrink-0 mt-1" />
+                <span className="text-lg font-light leading-relaxed">{item}</span>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Event Categories */}
-      <section className="py-16 md:py-24 lg:py-32 bg-cream">
-        <div className="container-luxury">
+      {/* Tickets Section */}
+      <section className="py-16 md:py-24 bg-beige relative">
+        <div className="container-luxury px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-12 md:mb-16 lg:mb-20"
+            className="text-center mb-16"
           >
-            <h2 className="text-4xl sm:text-5xl md:text-6xl font-serif text-black mb-4">
-              Event Categories
-            </h2>
-            <div className="w-24 h-px bg-gold mx-auto mb-4" />
-            <p className="text-base md:text-lg text-charcoal max-w-2xl mx-auto">
-              Discover the types of exclusive experiences we curate
-            </p>
+            <h2 className="text-4xl md:text-5xl font-serif text-black mb-4">Tickets & Tables</h2>
+            <p className="text-charcoal">Join us for a night of glitz and glamour</p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-            {eventCategories.map((category, index) => {
-              const Icon = category.icon;
-              return (
-                <motion.div
-                  key={category.title}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1, duration: 0.5 }}
-                  className="bg-white p-8 border border-beige hover:border-gold transition-colors group"
-                >
-                  <div className="w-16 h-16 bg-cream rounded-full flex items-center justify-center mb-6 group-hover:bg-gold transition-colors">
-                    <Icon className="w-8 h-8 text-charcoal group-hover:text-white transition-colors" />
-                  </div>
-                  <h3 className="text-xl font-serif text-black mb-3">
-                    {category.title}
-                  </h3>
-                  <p className="text-sm text-charcoal leading-relaxed">
-                    {category.description}
-                  </p>
-                </motion.div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* Past Events Gallery */}
-      <section className="py-16 md:py-24 lg:py-32 bg-white">
-        <div className="container-luxury">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-12 md:mb-16 lg:mb-20"
-          >
-            <h2 className="text-4xl sm:text-5xl md:text-6xl font-serif text-black mb-4">
-              Past Events
-            </h2>
-            <div className="w-24 h-px bg-gold mx-auto mb-4" />
-            <p className="text-base md:text-lg text-charcoal max-w-2xl mx-auto">
-              A glimpse into our recent gatherings and celebrations
-            </p>
-          </motion.div>
-
-          <div className="relative">
-            {/* Slider Container */}
-            <div
-              ref={pastEventsScrollRef}
-              className="flex gap-6 md:gap-8 overflow-x-auto scrollbar-hide scroll-smooth pb-4"
-              style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {/* General Admission */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="bg-white p-8 md:p-12 border border-black/10 text-center hover:shadow-2xl transition-all duration-300 relative group"
             >
-              {pastEvents.map((event, index) => (
-                <motion.div
-                  key={event.id}
-                  initial={{ opacity: 0, x: 30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1, duration: 0.5 }}
-                  className="group cursor-pointer flex-shrink-0 w-80 sm:w-96"
-                >
-                  <div className="relative aspect-[4/3] overflow-hidden rounded-lg mb-4 bg-charcoal">
-                    <Image
-                      src={event.image}
-                      alt={event.title}
-                      fill
-                      className="object-cover transition-all duration-700 group-hover:scale-110"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
-                    <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                      <p className="text-sm uppercase tracking-wider text-gold mb-1">
-                        {event.date}
-                      </p>
-                      <h3 className="text-xl font-serif mb-1">
-                        {event.title}
-                      </h3>
-                      <p className="text-sm text-white/90">
-                        {event.location}
-                      </p>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
+              <h3 className="text-2xl font-serif text-black mb-2">General Admission</h3>
+              <div className="text-5xl font-serif text-charcoal mb-8">$100<span className="text-base text-gray-500 font-sans">.00</span></div>
+              <ul className="text-left space-y-4 mb-8 text-charcoal">
+                <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-gold" /> Formal Dinner</li>
+                <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-gold" /> Red carpet photo experience</li>
+                <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-gold" /> Fashion show & awards</li>
+                <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-gold" /> Door prizes & giveaways</li>
+              </ul>
+              <button className="w-full py-4 bg-black text-white uppercase tracking-widest hover:bg-gold hover:text-black transition-colors font-medium">Coming Soon</button>
+            </motion.div>
 
-            {/* Navigation Buttons */}
-            <div className="flex justify-center gap-4 mt-8">
-              <button
-                onClick={() => {
-                  if (pastEventsScrollRef.current) {
-                    pastEventsScrollRef.current.scrollBy({ left: -350, behavior: 'smooth' });
-                  }
-                }}
-                className="p-3 bg-cream hover:bg-beige border border-beige rounded-full transition-colors group"
-                aria-label="Scroll left"
-              >
-                <ChevronLeft className="w-5 h-5 text-charcoal group-hover:text-black" />
-              </button>
-              <button
-                onClick={() => {
-                  if (pastEventsScrollRef.current) {
-                    pastEventsScrollRef.current.scrollBy({ left: 350, behavior: 'smooth' });
-                  }
-                }}
-                className="p-3 bg-cream hover:bg-beige border border-beige rounded-full transition-colors group"
-                aria-label="Scroll right"
-              >
-                <ChevronRight className="w-5 h-5 text-charcoal group-hover:text-black" />
-              </button>
-            </div>
+            {/* VIP Admission */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="bg-black p-8 md:p-12 border border-gold text-center shadow-2xl relative transform md:-translate-y-6"
+            >
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gold text-black px-4 py-1 uppercase text-xs font-bold tracking-widest">
+                Recommended
+              </div>
+              <h3 className="text-2xl font-serif text-gold mb-2">VIP Experience</h3>
+              <div className="text-5xl font-serif text-white mb-8">$150<span className="text-base text-gray-400 font-sans">.00</span></div>
+              <ul className="text-left space-y-4 mb-8 text-white/90">
+                <li className="flex items-center gap-3"><Sparkles className="w-5 h-5 text-gold" /> <strong>Preferred VIP Seating</strong></li>
+                <li className="flex items-center gap-3"><Sparkles className="w-5 h-5 text-gold" /> <strong>Wine Service</strong></li>
+                <li className="flex items-center gap-3"><Sparkles className="w-5 h-5 text-gold" /> <strong>Exclusive VIP Gift</strong></li>
+                <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-gold" /> All General Admission benefits</li>
+              </ul>
+              <button className="w-full py-4 bg-gold text-black uppercase tracking-widest hover:bg-white transition-colors font-medium">Coming Soon</button>
+            </motion.div>
+          </div>
+
+          <div className="text-center mt-12 text-charcoal">
+            <p className="font-medium">Tables of 8 available for businesses and group celebrations.</p>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-16 md:py-24 lg:py-32 bg-charcoal">
-        <div className="container-luxury">
+      {/* Sponsorship Section */}
+      <section className="py-16 md:py-24 bg-charcoal text-white">
+        <div className="container-luxury px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center max-w-3xl mx-auto"
+            className="text-center mb-16"
           >
-            <h2 className="text-4xl sm:text-5xl md:text-6xl font-serif text-white mb-6">
-              Host Your Event With Us
-            </h2>
+            <h2 className="text-4xl md:text-5xl font-serif mb-4">Become a Sponsor</h2>
             <div className="w-24 h-px bg-gold mx-auto mb-6" />
-            <p className="text-base md:text-lg text-white/80 mb-8 leading-relaxed">
-              Whether you're planning a private gathering, corporate event, or exclusive launch, 
-              we create bespoke experiences that reflect your vision and exceed expectations.
+            <p className="text-white/80 max-w-2xl mx-auto text-lg leading-relaxed">
+              Partner with us to uplift lives and honor the memory of our lost loved ones. Your support fuels our mission to bring hope, healing, and confidence to our community.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gold text-black hover:bg-gold-light transition-colors text-sm uppercase tracking-wider"
-              >
-                Inquire About Events
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 border-2 border-white text-white hover:bg-white hover:text-black transition-colors text-sm uppercase tracking-wider"
-              >
-                View Venues
-              </Link>
-            </div>
           </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {/* Chandelier Sponsor */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="bg-white/5 p-6 border border-gold rounded-lg hover:bg-white/10 transition-colors relative overflow-hidden"
+            >
+              <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-transparent via-gold to-transparent opacity-50" />
+              <h3 className="text-xl font-serif text-gold mb-2">Chandelier</h3>
+              <p className="text-xs uppercase tracking-widest text-white/50 mb-4">Presenting Sponsor</p>
+              <ul className="space-y-3 text-sm text-white/80">
+                <li className="flex items-start gap-2"><Star className="w-4 h-4 text-gold shrink-0 mt-0.5" /> Premier Brand Recognition</li>
+                <li className="flex items-start gap-2"><Star className="w-4 h-4 text-gold shrink-0 mt-0.5" /> VIP Table for 8 Guests</li>
+                <li className="flex items-start gap-2"><Star className="w-4 h-4 text-gold shrink-0 mt-0.5" /> Stage Recognition</li>
+                <li className="flex items-start gap-2"><Star className="w-4 h-4 text-gold shrink-0 mt-0.5" /> VIP Gift Bag Opportunity</li>
+              </ul>
+            </motion.div>
+
+            {/* Radiance Sponsor */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="bg-white/5 p-6 border border-white/20 rounded-lg hover:border-gold/50 transition-colors"
+            >
+              <h3 className="text-xl font-serif text-white mb-2">Radiance</h3>
+              <p className="text-xs uppercase tracking-widest text-white/50 mb-4">Sponsor</p>
+              <ul className="space-y-3 text-sm text-white/80">
+                <li className="flex items-start gap-2"><Sparkles className="w-4 h-4 text-white/40 shrink-0 mt-0.5" /> VIP Seating for 4 Guests</li>
+                <li className="flex items-start gap-2"><Sparkles className="w-4 h-4 text-white/40 shrink-0 mt-0.5" /> Logo on Website</li>
+                <li className="flex items-start gap-2"><Sparkles className="w-4 h-4 text-white/40 shrink-0 mt-0.5" /> Program Recognition</li>
+                <li className="flex items-start gap-2"><Sparkles className="w-4 h-4 text-white/40 shrink-0 mt-0.5" /> Evening Acknowledgment</li>
+              </ul>
+            </motion.div>
+
+            {/* Glow Sponsor */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="bg-white/5 p-6 border border-white/20 rounded-lg hover:border-gold/50 transition-colors"
+            >
+              <h3 className="text-xl font-serif text-white mb-2">Glow</h3>
+              <p className="text-xs uppercase tracking-widest text-white/50 mb-4">Sponsor</p>
+              <ul className="space-y-3 text-sm text-white/80">
+                <li className="flex items-start gap-2"><Sparkles className="w-4 h-4 text-white/40 shrink-0 mt-0.5" /> Reserved Seating for 2</li>
+                <li className="flex items-start gap-2"><Sparkles className="w-4 h-4 text-white/40 shrink-0 mt-0.5" /> Name on Website</li>
+                <li className="flex items-start gap-2"><Sparkles className="w-4 h-4 text-white/40 shrink-0 mt-0.5" /> Printed Program Listing</li>
+                <li className="flex items-start gap-2"><Sparkles className="w-4 h-4 text-white/40 shrink-0 mt-0.5" /> Evening Acknowledgment</li>
+              </ul>
+            </motion.div>
+
+            {/* Friend of the Gala */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+              className="bg-white/5 p-6 border border-white/20 rounded-lg hover:border-gold/50 transition-colors"
+            >
+              <h3 className="text-xl font-serif text-white mb-2">Friend</h3>
+              <p className="text-xs uppercase tracking-widest text-white/50 mb-4">Supporter</p>
+              <ul className="space-y-3 text-sm text-white/80">
+                <li className="flex items-start gap-2"><Heart className="w-4 h-4 text-white/40 shrink-0 mt-0.5" /> Name Listed as Supporter</li>
+                <li className="flex items-start gap-2"><Heart className="w-4 h-4 text-white/40 shrink-0 mt-0.5" /> Program Recognition</li>
+                <li className="flex items-start gap-2"><Heart className="w-4 h-4 text-white/40 shrink-0 mt-0.5" /> Option to Sponsor a Ticket</li>
+              </ul>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Community Impact */}
+      <section className="py-16 md:py-24 bg-white">
+        <div className="container-luxury max-w-5xl mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-3xl md:text-5xl font-serif text-black mb-6">Impact & Mission</h2>
+              <p className="text-lg text-charcoal mb-6 leading-relaxed">
+                The Black Tie Chandelier Gala proudly supports and uplifts the community through growing educational and outreach programs led by
+                The Financial Act and Creative Urban Living Inc.
+              </p>
+
+              <div className="space-y-6">
+                <div className="bg-cream p-6 rounded-lg border-l-4 border-gold">
+                  <h3 className="text-xl font-serif mb-2">Benefiting Causes</h3>
+                  <div className="flex flex-col gap-2">
+                    <div className="flex items-center gap-2"><Heart className="w-5 h-5 text-red-500 fill-red-500" /> The James Cancer Hospital (Columbus, Ohio)</div>
+                    <div className="flex items-center gap-2"><Heart className="w-5 h-5 text-red-500 fill-red-500" /> Sickle Cell Awareness & Support</div>
+                  </div>
+                </div>
+
+                <div className="bg-charcoal text-white p-6 rounded-lg">
+                  <h3 className="text-xl font-serif mb-4 text-gold">Honoring our Loved Ones</h3>
+                  <p className="text-sm leading-relaxed opacity-90">
+                    A heartfelt tribute will honor a model we lost to sickle cell and recognize Dr. Bea’s granddaughter, who continues to courageously battle sickle cell.
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="relative h-[400px] bg-beige rounded-lg overflow-hidden"
+            >
+              <Image
+                src="https://images.unsplash.com/photo-1544027993-37dbfe43562a?w=800&q=80"
+                alt="Community Impact"
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-black/20" />
+              <div className="absolute bottom-6 left-6 right-6 text-white">
+                <div className="text-3xl font-serif mb-2">Our Mission</div>
+                <p className="text-sm opacity-90">Improving quality of life, empowering families, and creating safe spaces for growth.</p>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Educational Programs */}
+      <section className="py-16 bg-cream">
+        <div className="container-luxury px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl md:text-4xl font-serif text-black mb-4">Educational Programs</h2>
+            <div className="w-20 h-px bg-gold mx-auto mb-4" />
+            <p className="text-charcoal max-w-2xl mx-auto">
+              We want you to grow. The night closes with the launch of our Honey B Classes.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {educationPrograms.map((program, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.1 }}
+                className="bg-white p-6 md:p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow"
+              >
+                <h3 className="text-xl font-serif text-black mb-3">{program.title}</h3>
+                <p className="text-sm text-charcoal leading-relaxed">{program.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Partners Section */}
+      <section className="py-12 bg-white border-t border-gray-100">
+        <div className="container-luxury text-center px-4">
+          <p className="text-xs tracking-widest uppercase text-gray-400 mb-8">Our Corporate Partners</p>
+          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
+            <span className="text-xl font-bold">Huntington Bank</span>
+            <span className="text-xl font-bold">Chase Bank</span>
+            <span className="text-xl font-bold">5th Third Bank</span>
+            <span className="text-xl font-bold">Costco</span>
+            <span className="text-xl font-bold">First Watch</span>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Footer for Gala */}
+      <section className="py-16 md:py-24 bg-black text-white text-center">
+        <div className="container-luxury px-4">
+          <h2 className="text-3xl md:text-5xl font-serif mb-6">Want to Walk the Walk With Us?</h2>
+          <p className="text-lg text-white/70 max-w-2xl mx-auto mb-8">
+            Model casting, sponsorships, vendors, and media inquiries are now open.
+          </p>
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <a href="mailto:beafostersdesigns@gmail.com" className="px-8 py-4 bg-gold text-black font-medium uppercase tracking-wider hover:bg-white transition-colors">
+              Contact Us
+            </a>
+            <button disabled className="px-8 py-4 border border-white/30 text-white/50 cursor-not-allowed uppercase tracking-wider">
+              Tickets Coming Soon
+            </button>
+          </div>
+          <p className="mt-8 text-sm text-white/40">Inquiries: beafostersdesigns@gmail.com</p>
         </div>
       </section>
     </div>
   );
 }
-
