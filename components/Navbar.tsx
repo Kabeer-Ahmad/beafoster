@@ -68,13 +68,13 @@ export default function Navbar() {
             </button>
 
             {/* Mobile Logo - Center */}
-            <Link href="/" className="flex items-center justify-self-center">
+            <Link href="/" className="flex items-center justify-self-center shrink-0">
               <motion.div
-                className="relative h-16 w-16 sm:h-20 sm:w-20"
+                className="relative h-14 w-14 sm:h-16 sm:w-16"
                 whileHover={{ scale: 1.05 }}
               >
                 <Image
-                  src="/Logo.png"
+                  src="/Logo_1.jpeg"
                   alt="The Black Tie Chandelier Gala"
                   fill
                   className="object-contain"
@@ -104,13 +104,13 @@ export default function Navbar() {
 
           {/* Desktop Layout */}
           {/* Desktop Logo - Left */}
-          <Link href="/" className="hidden lg:flex items-center">
+          <Link href="/" className="hidden lg:flex items-center shrink-0">
             <motion.div
-              className="relative h-20 w-20 sm:h-20 sm:w-20 md:h-30 md:w-30"
+              className="relative h-16 w-16 lg:h-[4.5rem] lg:w-[4.5rem]"
               whileHover={{ scale: 1.05 }}
             >
               <Image
-                src="/Logo.png"
+                src="/Logo_1.jpeg"
                 alt="The Black Tie Chandelier Gala"
                 fill
                 className="object-contain"
@@ -122,27 +122,27 @@ export default function Navbar() {
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
-              <div key={link.name} className="relative group">
+              <div key={link.name} className="relative flex items-center">
                 {link.dropdown ? (
                   <div
-                    className="flex items-center gap-1 cursor-pointer"
+                    className="relative flex items-center gap-1.5 cursor-pointer"
                     onMouseEnter={() => setServicesOpen(true)}
                     onMouseLeave={() => setServicesOpen(false)}
                   >
                     <Link
                       href={link.href}
-                      className="text-sm font-medium text-charcoal hover:text-black transition-colors uppercase tracking-wider"
+                      className="text-sm font-bold text-charcoal hover:text-black transition-colors uppercase tracking-wider"
                     >
                       {link.name}
                     </Link>
-                    <ChevronDown className="w-4 h-4 text-charcoal" />
+                    <ChevronDown className="w-4 h-4 text-charcoal flex-shrink-0" />
                     <AnimatePresence>
                       {servicesOpen && (
                         <motion.div
                           initial={{ opacity: 0, y: 10 }}
                           animate={{ opacity: 1, y: 0 }}
                           exit={{ opacity: 0, y: 10 }}
-                          className="absolute top-full left-0 mt-2 w-48 bg-white shadow-lg border border-beige"
+                          className="absolute top-full left-0 mt-0.5 w-48 bg-white shadow-lg border border-beige z-[60]"
                           onMouseEnter={() => setServicesOpen(true)}
                           onMouseLeave={() => setServicesOpen(false)}
                         >
@@ -162,7 +162,7 @@ export default function Navbar() {
                 ) : (
                   <Link
                     href={link.href}
-                    className="text-sm font-medium text-charcoal hover:text-black transition-colors uppercase tracking-wider"
+                    className="text-sm font-bold text-charcoal hover:text-black transition-colors uppercase tracking-wider"
                   >
                     {link.name}
                   </Link>
@@ -171,7 +171,7 @@ export default function Navbar() {
             ))}
             <Link
               href="/boutique"
-              className="ml-4 px-6 py-2 bg-black text-white text-sm font-medium hover:bg-charcoal transition-colors uppercase tracking-wider"
+              className="ml-4 px-6 py-2 bg-black text-white text-sm font-bold hover:bg-charcoal transition-colors uppercase tracking-wider"
             >
               Shop Boutique
             </Link>
@@ -228,7 +228,7 @@ export default function Navbar() {
                     >
                       {link.dropdown ? (
                         <div>
-                          <div className="text-xs sm:text-sm font-medium text-charcoal uppercase tracking-wider mb-2 px-2 sm:px-0">
+                          <div className="text-xs sm:text-sm font-bold text-charcoal uppercase tracking-wider mb-2 px-2 sm:px-0">
                             {link.name}
                           </div>
                           <div className="pl-3 sm:pl-4 space-y-1.5 sm:space-y-2">
@@ -247,7 +247,7 @@ export default function Navbar() {
                       ) : (
                         <Link
                           href={link.href}
-                          className="block text-sm sm:text-base font-medium text-charcoal hover:text-black hover:bg-cream px-2 sm:px-0 py-2.5 sm:py-3 rounded transition-colors uppercase tracking-wider"
+                          className="block text-sm sm:text-base font-bold text-charcoal hover:text-black hover:bg-cream px-2 sm:px-0 py-2.5 sm:py-3 rounded transition-colors uppercase tracking-wider"
                           onClick={() => setIsOpen(false)}
                         >
                           {link.name}
@@ -261,7 +261,7 @@ export default function Navbar() {
                 <div className="mt-6 sm:mt-8 pt-6 sm:pt-8 border-t border-beige space-y-3">
                   <Link
                     href="/boutique"
-                    className="block w-full px-6 py-3 bg-black text-white text-sm font-medium text-center hover:bg-charcoal transition-colors uppercase tracking-wider rounded"
+                    className="block w-full px-6 py-3 bg-black text-white text-sm font-bold text-center hover:bg-charcoal transition-colors uppercase tracking-wider rounded"
                     onClick={() => setIsOpen(false)}
                   >
                     Shop Boutique

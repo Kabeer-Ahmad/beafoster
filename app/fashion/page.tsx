@@ -7,16 +7,15 @@ import Link from 'next/link';
 
 export default function Fashion() {
   const lookbookImages = [
-    { id: 1, src: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80', alt: 'Fashion Look 1', size: 'tall' },
-    { id: 2, src: 'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=600&q=80', alt: 'Fashion Look 2', size: 'wide' },
-    { id: 3, src: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600&q=80', alt: 'Fashion Look 3', size: 'square' },
-    { id: 4, src: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80', alt: 'Fashion Look 4', size: 'tall' },
-    { id: 5, src: 'https://images.unsplash.com/photo-1445205170230-053b83016050?w=600&q=80', alt: 'Fashion Look 5', size: 'square' },
-    { id: 6, src: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=600&q=80', alt: 'Fashion Look 6', size: 'wide' },
-    { id: 7, src: 'https://images.unsplash.com/photo-1483985988355-763728e1935b?w=600&q=80', alt: 'Fashion Look 7', size: 'tall' },
-    { id: 8, src: 'https://images.unsplash.com/photo-1511578314322-379afb476865?w=600&q=80', alt: 'Fashion Look 8', size: 'square' },
-    { id: 9, src: 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=600&q=80', alt: 'Fashion Look 9', size: 'wide' },
-    { id: 10, src: 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=600&q=80', alt: 'Fashion Look 10', size: 'tall' },
+    { id: 1, src: '/fashion/f1.jpg', alt: 'Fashion Look 1', size: 'tall' },
+    { id: 2, src: '/fashion/f2.jpg', alt: 'Fashion Look 2', size: 'wide' },
+    { id: 3, src: '/fashion/f3.jpg', alt: 'Fashion Look 3', size: 'tall' },
+    { id: 4, src: '/fashion/f4.jpeg', alt: 'Fashion Look 4', size: 'tall' },
+    { id: 5, src: '/fashion/f5.jpg', alt: 'Fashion Look 5', size: 'tall' },
+    { id: 6, src: '/fashion/f6.jpg', alt: 'Fashion Look 6', size: 'wide' },
+    { id: 7, src: '/fashion/f7.webp', alt: 'Fashion Look 7', size: 'tall' },
+    { id: 8, src: '/fashion/f8.jpg', alt: 'Fashion Look 8', size: 'tall' },
+    { id: 9, src: '/fashion/f9.webp', alt: 'Fashion Look 9', size: 'wide' },
   ];
 
   const services = [
@@ -167,7 +166,7 @@ export default function Fashion() {
                         src={image.src}
                         alt={image.alt}
                         fill
-                        className="object-cover transition-all duration-500 group-hover:scale-110"
+                        className="object-cover transition-all duration-500"
                       />
                     </div>
                   </div>
@@ -306,7 +305,7 @@ export default function Fashion() {
                 transition={{ delay: index * 0.15, duration: 0.6 }}
                 className="text-center"
               >
-                <div className="text-6xl md:text-7xl font-serif text-gold/20 mb-4">
+                <div className="text-6xl md:text-7xl font-serif text-gold/50 mb-4">
                   {item.step}
                 </div>
                 <h3 className="text-2xl md:text-3xl font-serif text-black mb-4">

@@ -25,7 +25,7 @@ export default function Services() {
         {
             step: "01",
             title: "Connect",
-            description: "Reach out through the contact form or email with a brief description of what you’re looking for."
+            description: "Reach out through the contact form or email (info@theblacktiechandeliergala.com) with a brief description of what you’re looking for."
         },
         {
             step: "02",

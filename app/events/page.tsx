@@ -413,14 +413,14 @@ export default function Events() {
             Model casting, sponsorships, vendors, and media inquiries are now open.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <a href="mailto:beafostersdesigns@gmail.com" className="px-8 py-4 bg-gold text-black font-medium uppercase tracking-wider hover:bg-white transition-colors">
+            <a href="mailto:info@theblacktiechandeliergala.com" className="px-8 py-4 bg-gold text-black font-medium uppercase tracking-wider hover:bg-white transition-colors">
               Contact Us
             </a>
             <button disabled className="px-8 py-4 border border-white/30 text-white/50 cursor-not-allowed uppercase tracking-wider">
               Tickets Coming Soon
             </button>
           </div>
-          <p className="mt-8 text-sm text-white/40">Inquiries: beafostersdesigns@gmail.com</p>
+          <p className="mt-8 text-sm text-white/40">Inquiries: info@theblacktiechandeliergala.com</p>
         </div>
       </section>
     </div>

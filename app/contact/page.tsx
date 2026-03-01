@@ -51,19 +51,19 @@ export default function Contact() {
     {
       icon: Mail,
       title: 'Email',
-      content: 'hello@beafoster.com',
-      link: 'mailto:hello@beafoster.com',
+      content: 'info@theblacktiechandeliergala.com',
+      link: 'mailto:info@theblacktiechandeliergala.com',
     },
     {
       icon: Phone,
       title: 'Phone',
-      content: '+1 (555) 123-4567',
-      link: 'tel:+15551234567',
+      content: '+1 (614) 204-5024',
+      link: 'tel:+16142045024',
     },
     {
       icon: MapPin,
       title: 'Address',
-      content: '123 Fashion Avenue, New York, NY 10001',
+      content: 'PO Box 24026, Columbus, OH 43224–2531',
       link: '#',
     },
     {
@@ -75,32 +75,18 @@ export default function Contact() {
   ];
 
   const socialLinks = [
-    { name: 'Instagram', href: '#', icon: Instagram },
-    { name: 'Facebook', href: '#', icon: Facebook },
+    { name: 'Instagram', href: 'https://www.instagram.com/theblacktiechandeliergala/?hl=en', icon: Instagram },
+    { name: 'Beau Couture Fashion', href: 'https://www.instagram.com/beaucouturefashion/', icon: Instagram },
+    { name: 'Facebook', href: 'https://www.facebook.com/p/The-Black-Tie-Chandelier-Gala-100084365270413/', icon: Facebook },
     { name: 'Twitter', href: '#', icon: Twitter },
     { name: 'LinkedIn', href: '#', icon: Linkedin },
   ];
 
   const offices = [
     {
-      city: 'New York',
-      address: '123 Fashion Avenue\nNew York, NY 10001',
-      phone: '+1 (555) 123-4567',
-    },
-    {
-      city: 'London',
-      address: '45 Mayfair Square\nLondon, W1K 2QA',
-      phone: '+44 20 7123 4567',
-    },
-    {
-      city: 'Paris',
-      address: '78 Avenue des Champs-Élysées\n75008 Paris, France',
-      phone: '+33 1 42 86 83 00',
-    },
-    {
-      city: 'Milan',
-      address: 'Via della Spiga, 12\n20121 Milano, Italy',
-      phone: '+39 02 1234 5678',
+      city: 'Columbus',
+      address: 'PO Box 24026\nColumbus, OH 43224–2531',
+      phone: '+1 (614) 204-5024',
     },
   ];
 
@@ -208,7 +194,7 @@ export default function Contact() {
                       value={formData.phone}
                       onChange={handleChange}
                       className="w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-cream border border-beige focus:border-gold focus:outline-none transition-colors text-black text-sm sm:text-base"
-                      placeholder="+1 (555) 123-4567"
+                      placeholder="+1 (614) 204-5024"
                     />
                   </div>
                   <div>

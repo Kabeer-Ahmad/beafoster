@@ -32,7 +32,7 @@ export default function About() {
                   alt="Dr. Bea Foster"
                   width={800}
                   height={1000}
-                  className="w-full h-auto object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                  className="w-full h-auto object-cover"
                 />
               </div>
               {/* Decorative Frame */}
@@ -51,7 +51,7 @@ export default function About() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
               >
-                <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif text-black mb-4 md:mb-6 leading-tight">
+                <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif text-black mb-4 md:mb-6 leading-tight !text-black transition-none">
                   About Dr. Bea Foster, Ph.D.
                 </h1>
                 <div className="w-20 h-px bg-gold mb-6 md:mb-8" />
@@ -99,7 +99,7 @@ export default function About() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-4xl sm:text-5xl font-serif text-black mb-6">From the Heart of Dr. Bea</h2>
+            <h2 className="text-4xl sm:text-5xl font-serif text-black mb-6 !text-black transition-none">From the Heart of Dr. Bea</h2>
             <div className="w-24 h-px bg-gold mx-auto" />
           </motion.div>
 
@@ -153,8 +153,8 @@ export default function About() {
             >
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-black mb-6">Meet My Right Hand</h2>
               <div className="w-20 h-px bg-gold mb-6" />
-              <h3 className="text-2xl font-serif text-black mb-4">Dr. Mellinda DePriest</h3>
-              <div className="space-y-4 text-charcoal leading-relaxed">
+              <h3 className="text-2xl font-serif text-black mb-4 !text-black transition-none">Dr. Mellinda DePriest</h3>
+              <div className="space-y-4 text-base md:text-lg lg:text-xl text-charcoal leading-relaxed">
                 <p>
                   Dr. Mellinda DePriest is my trusted assistant and right hand. With a joyful spirit and a heart for people, she helps keep every detail moving in the right direction—from projects and planning to communication and follow-through.
                 </p>
@@ -171,15 +171,16 @@ export default function About() {
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="relative h-[400px] md:h-[500px]"
+              className="relative w-full"
             >
-              <div className="absolute inset-4 border border-black/10 z-0 transform rotate-3" />
-              <div className="relative h-full w-full bg-charcoal overflow-hidden z-10">
+              <div className="absolute -inset-2 md:-inset-4 border-2 border-gold/30 opacity-50 pointer-events-none z-0" />
+              <div className="relative w-full z-10">
                 <Image
-                  src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=800&q=80"
+                  src="/melinda_priest.jpeg"
                   alt="Dr. Mellinda DePriest"
-                  fill
-                  className="object-cover"
+                  width={600}
+                  height={800}
+                  className="w-full h-auto object-contain"
                 />
               </div>
             </motion.div>

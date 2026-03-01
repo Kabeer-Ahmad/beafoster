@@ -128,7 +128,7 @@ export default function Interiors() {
                   className="bg-white p-6 md:p-8 rounded-lg border border-beige hover:shadow-xl transition-all duration-300 group relative"
                 >
                   {/* Step Number */}
-                  <div className="absolute top-4 right-4 text-6xl font-serif text-gold/10">
+                  <div className="absolute top-4 right-4 text-6xl font-serif text-gold/50">
                     {index + 1}
                   </div>
                   

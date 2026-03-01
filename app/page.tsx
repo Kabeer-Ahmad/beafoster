@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowRight, ShoppingBag, Calendar, Award, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ArrowRight, ShoppingBag, Calendar, Award, ChevronLeft, ChevronRight, BookOpen, Star } from 'lucide-react';
 import MagazineFlipbookSection from '@/components/MagazineFlipbookSection';
 import { useRef } from 'react';
 
@@ -136,7 +136,7 @@ export default function Home() {
             transition={{ delay: 0.2, duration: 0.8 }}
             className="mb-4 sm:mb-6"
           >
-            <span className="inline-block text-xs sm:text-sm uppercase tracking-[0.3em] text-charcoal/70 border-t border-b border-gold/30 py-2 px-4">
+            <span className="inline-block text-sm sm:text-base md:text-lg uppercase tracking-[0.3em] text-charcoal/70 border-t border-b border-gold/30 py-2 px-4 font-bold">
               Welcome
             </span>
           </motion.div>
@@ -168,7 +168,7 @@ export default function Home() {
             transition={{ delay: 0.6, duration: 0.8 }}
             className="mb-6 sm:mb-8 md:mb-10 px-4"
           >
-            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-charcoal tracking-[0.2em] uppercase font-light mb-2">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-charcoal tracking-[0.2em] uppercase font-bold mb-2">
               Dr. Bea Foster, Ph.D.
             </p>
             <div className="w-16 sm:w-20 h-px bg-gold mx-auto my-4" />
@@ -344,12 +344,12 @@ export default function Home() {
                       src={service.image}
                       alt={service.title}
                       fill
-                      className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110"
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
                     />
-                    <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors" />
+                    <div className="absolute inset-0 bg-black/40" />
                     <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 md:p-8 text-white">
-                      <h3 className="text-2xl sm:text-3xl font-serif mb-1 sm:mb-2">{service.title}</h3>
-                      <p className="text-xs sm:text-sm opacity-90">{service.description}</p>
+                      <h3 className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold md:font-extrabold mb-1 sm:mb-2 uppercase tracking-wide">{service.title}</h3>
+                      <p className="text-sm sm:text-base md:text-lg font-semibold opacity-95">{service.description}</p>
                     </div>
                   </div>
                 </Link>
@@ -372,7 +372,7 @@ export default function Home() {
               B. Sporty
             </h2>
             <div className="w-16 sm:w-20 h-px bg-gold mx-auto mb-4 sm:mb-6" />
-            <p className="text-sm sm:text-base text-charcoal/80 leading-relaxed max-w-2xl mx-auto mb-6 sm:mb-8 font-light">
+            <p className="text-base sm:text-lg md:text-xl text-charcoal/80 leading-relaxed max-w-2xl mx-auto mb-6 sm:mb-8 font-medium">
               Elevate your style with our exclusive sportswear and lifestyle collection
             </p>
             <Link
@@ -417,10 +417,10 @@ export default function Home() {
                           />
                         </div>
                         <div className="p-3 sm:p-4 text-center">
-                          <h4 className="text-sm sm:text-base font-serif text-black mb-1 line-clamp-1">
+                          <h4 className="text-base sm:text-lg md:text-xl font-serif font-bold text-black mb-2 line-clamp-1">
                             {product.name}
                           </h4>
-                          <span className="text-xs uppercase tracking-wider text-gold">
+                          <span className="text-sm sm:text-base uppercase tracking-wider !text-gold">
                             Contact to Purchase
                           </span>
                         </div>
@@ -487,10 +487,10 @@ export default function Home() {
                           />
                         </div>
                         <div className="p-3 sm:p-4 text-center">
-                          <h4 className="text-sm sm:text-base font-serif text-black mb-1 line-clamp-1">
+                          <h4 className="text-base sm:text-lg md:text-xl font-serif font-bold text-black mb-2 line-clamp-1">
                             {product.name}
                           </h4>
-                          <span className="text-xs uppercase tracking-wider text-gold">
+                          <span className="text-sm sm:text-base uppercase tracking-wider !text-gold">
                             Contact to Purchase
                           </span>
                         </div>
@@ -557,10 +557,10 @@ export default function Home() {
                           />
                         </div>
                         <div className="p-3 sm:p-4 text-center">
-                          <h4 className="text-sm sm:text-base font-serif text-black mb-1 line-clamp-1">
+                          <h4 className="text-base sm:text-lg md:text-xl font-serif font-bold text-black mb-2 line-clamp-1">
                             {product.name}
                           </h4>
-                          <span className="text-xs uppercase tracking-wider text-gold">
+                          <span className="text-sm sm:text-base uppercase tracking-wider !text-gold">
                             Contact to Purchase
                           </span>
                         </div>
@@ -592,6 +592,106 @@ export default function Home() {
                     <ChevronRight className="w-4 h-4 text-charcoal" />
                   </button>
                 </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Books by Bea */}
+      <section className="py-12 sm:py-16 md:py-24 lg:py-32 bg-cream">
+        <div className="container-luxury px-4 sm:px-0">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-8 sm:mb-12 md:mb-16"
+          >
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif text-black mb-3 sm:mb-4">
+              Books by Bea
+            </h2>
+            <div className="w-16 sm:w-20 h-px bg-gold mx-auto mb-4 sm:mb-6" />
+            <p className="text-base sm:text-lg md:text-xl text-charcoal/80 leading-relaxed max-w-2xl mx-auto font-medium">
+              Discover Dr. Bea Foster&apos;s inspiring stories of resilience, beauty, and finding light through the darkness
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12 max-w-5xl mx-auto">
+            {/* Book 1: Designing In The Dark */}
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="bg-white border border-beige overflow-hidden hover:shadow-xl transition-shadow group"
+            >
+              <div className="p-6 sm:p-8 md:p-10 flex flex-col h-full">
+                <div className="flex items-center gap-2 mb-4">
+                  <BookOpen className="w-6 h-6 text-gold" />
+                  <span className="text-sm uppercase tracking-wider text-gold font-medium">Kindle Edition</span>
+                </div>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-serif text-black mb-2 group-hover:text-gold transition-colors">
+                  Designing In The Dark
+                </h3>
+                <p className="text-base text-charcoal mb-3">by Bea Foster</p>
+                <div className="flex items-center gap-1 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-4 h-4 fill-gold text-gold" />
+                  ))}
+                  <span className="text-base text-charcoal ml-1">5.0 (7 reviews)</span>
+                </div>
+                <p className="text-base sm:text-lg text-charcoal leading-relaxed mb-6 flex-1">
+                  A reflection and reminder of how we all can achieve through it all. If it can happen for me it can happen for you. A little Black girl from Alabama, how I found my way with determination and learned wisdom, along with my faith in God. I had to open doors and move barriers in fashion and the design world. I found my way out of the darkness. You can do the same if you push ahead and never quit.
+                </p>
+                <p className="text-sm text-charcoal/70 mb-6">225 pages · English · December 2020</p>
+                <a
+                  href="https://www.amazon.com/Designing-Dark-Bea-Foster-ebook/dp/B08RHVC5Q1?ref_=ast_author_dp&th=1&psc=1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-3 bg-black text-white text-base font-semibold hover:bg-charcoal transition-colors uppercase tracking-wider group/btn"
+                >
+                  Buy on Amazon
+                  <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                </a>
+              </div>
+            </motion.div>
+
+            {/* Book 2: Bea and Beauty */}
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="bg-white border border-beige overflow-hidden hover:shadow-xl transition-shadow group"
+            >
+              <div className="p-6 sm:p-8 md:p-10 flex flex-col h-full">
+                <div className="flex items-center gap-2 mb-4">
+                  <BookOpen className="w-6 h-6 text-gold" />
+                  <span className="text-sm uppercase tracking-wider text-gold font-medium">Paperback</span>
+                </div>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-serif text-black mb-2 group-hover:text-gold transition-colors">
+                  Bea and Beauty
+                </h3>
+                <p className="text-base text-charcoal mb-3">by Bea Foster</p>
+                <div className="flex items-center gap-1 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-4 h-4 fill-gold text-gold" />
+                  ))}
+                  <span className="text-base text-charcoal ml-1">5.0 (1 review)</span>
+                </div>
+                <p className="text-base sm:text-lg text-charcoal leading-relaxed mb-6 flex-1">
+                  A small quick read, warm and humorous with life experiences—a young Black girl growing up with her mother and grandmother, with very little money in Montgomery, Alabama, ending up in Columbus, Ohio. Heartwarming old-time tales of back-in-the-day survival beauty tips and the wisdom her mother and grandmother taught her.
+                </p>
+                <p className="text-sm text-charcoal/70 mb-6">92 pages · English · December 2020</p>
+                <a
+                  href="https://www.amazon.com/Bea-Beauty-Foster/dp/1716439272?ref_=ast_author_dp&th=1&psc=1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-3 bg-black text-white text-base font-semibold hover:bg-charcoal transition-colors uppercase tracking-wider group/btn"
+                >
+                  Buy on Amazon
+                  <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                </a>
               </div>
             </motion.div>
           </div>

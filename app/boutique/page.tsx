@@ -218,20 +218,20 @@ export default function Boutique() {
                   </div>
                   <div className="p-5 flex flex-col flex-grow text-center">
                     <div className="mb-2">
-                      <span className="text-[10px] uppercase tracking-widest text-gold font-medium">
+                      <span className="text-xs uppercase tracking-widest text-gold font-semibold">
                         {product.category}
                       </span>
                     </div>
-                    <h3 className="text-lg font-serif text-black mb-2 leading-tight group-hover:text-gold transition-colors">
+                    <h3 className="text-xl md:text-2xl font-serif font-bold text-black mb-2 leading-tight">
                       {product.name}
                     </h3>
-                    <p className="text-xs text-charcoal/70 mb-4 flex-grow line-clamp-2">
+                    <p className="text-base md:text-lg text-charcoal/80 mb-4 flex-grow line-clamp-2">
                       {product.description}
                     </p>
                     <div className="pt-4 border-t border-beige/30 w-full">
                       <Link
                         href="/contact"
-                        className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 bg-black text-white hover:bg-gold hover:text-white transition-all duration-300 text-xs uppercase tracking-widest font-medium group-hover:shadow-lg"
+                        className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 bg-black text-white hover:bg-charcoal transition-colors text-sm uppercase tracking-widest font-semibold"
                       >
                         Contact to Purchase
                       </Link>

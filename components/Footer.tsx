@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { Instagram, Facebook, Twitter, Linkedin, Mail, ArrowRight } from 'lucide-react';
+import { Instagram, Facebook, Twitter, Linkedin, Mail, Phone, MapPin, ArrowRight } from 'lucide-react';
 
 export default function Footer() {
   const footerSections = {
@@ -38,8 +38,8 @@ export default function Footer() {
   };
 
   const socialLinks = [
-    { name: 'Instagram', href: '#', icon: Instagram },
-    { name: 'Facebook', href: '#', icon: Facebook },
+    { name: 'Instagram', href: 'https://www.instagram.com/theblacktiechandeliergala/?hl=en', icon: Instagram },
+    { name: 'Facebook', href: 'https://www.facebook.com/p/The-Black-Tie-Chandelier-Gala-100084365270413/', icon: Facebook },
     { name: 'Twitter', href: '#', icon: Twitter },
     { name: 'LinkedIn', href: '#', icon: Linkedin },
   ];
@@ -84,14 +84,29 @@ export default function Footer() {
               {/* Contact Info */}
               <div className="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
                 <a 
-                  href="mailto:hello@beafoster.com" 
+                  href="mailto:info@theblacktiechandeliergala.com" 
                   className="flex items-center gap-2 sm:gap-3 text-gray-300 hover:text-gold transition-colors group"
                 >
                   <div className="p-2 sm:p-2.5 bg-white/5 rounded-lg group-hover:bg-gold/20 transition-all duration-300 flex-shrink-0">
                     <Mail className="w-4 h-4 sm:w-5 sm:h-5" />
                   </div>
-                  <span className="text-sm sm:text-base break-all">hello@beafoster.com</span>
+                  <span className="text-sm sm:text-base break-all">info@theblacktiechandeliergala.com</span>
                 </a>
+                <a 
+                  href="tel:+16142045024" 
+                  className="flex items-center gap-2 sm:gap-3 text-gray-300 hover:text-gold transition-colors group"
+                >
+                  <div className="p-2 sm:p-2.5 bg-white/5 rounded-lg group-hover:bg-gold/20 transition-all duration-300 flex-shrink-0">
+                    <Phone className="w-4 h-4 sm:w-5 sm:h-5" />
+                  </div>
+                  <span className="text-sm sm:text-base">+1 (614) 204-5024</span>
+                </a>
+                <div className="flex items-start gap-2 sm:gap-3 text-gray-300">
+                  <div className="p-2 sm:p-2.5 bg-white/5 rounded-lg flex-shrink-0">
+                    <MapPin className="w-4 h-4 sm:w-5 sm:h-5" />
+                  </div>
+                  <span className="text-sm sm:text-base">PO Box 24026, Columbus, OH 43224–2531</span>
+                </div>
               </div>
 
               {/* Social Media */}
