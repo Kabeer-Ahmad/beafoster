@@ -128,7 +128,7 @@ export default function Boutique() {
       </section>
 
       {/* Search and Filter Section */}
-      <section className="py-4 sm:py-6 md:py-8 lg:py-12 bg-white border-b border-beige sticky top-20 z-40 backdrop-blur-sm bg-white/95">
+      <section className="py-4 sm:py-6 md:py-8 lg:py-12 bg-white border-b border-beige">
         <div className="container-luxury">
           {/* Search Bar */}
           <div className="mb-4 sm:mb-6 px-4">

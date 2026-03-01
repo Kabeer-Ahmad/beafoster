@@ -30,9 +30,9 @@ export default function Footer() {
       title: 'Connect',
       links: [
         { name: 'Contact', href: '/contact' },
-        { name: 'Newsletter', href: '#newsletter' },
-        { name: 'Careers', href: '#careers' },
-        { name: 'Press', href: '#press' },
+        { name: 'Newsletter', href: '/newsletter' },
+        { name: 'Careers', href: '/careers' },
+        { name: 'Press', href: '/press' },
       ],
     },
   };
@@ -45,7 +45,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-charcoal text-white mt-24 md:mt-32 lg:mt-40 relative overflow-hidden">
+    <footer className="bg-charcoal text-white mt-0 md:mt-0 lg:mt-0 relative overflow-hidden">
       {/* Top Decorative Line */}
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold/40 to-transparent" />
       
@@ -247,12 +247,25 @@ export default function Footer() {
           className="pt-6 sm:pt-8 md:pt-10 pb-6 sm:pb-8 md:pb-10 border-t border-white/10"
         >
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-6">
-            <p className="text-xs sm:text-sm text-gray-400 text-center sm:text-left">
-              © {new Date().getFullYear()} The Black Tie Chandelier Gala. All rights reserved.
-            </p>
+            <div className="text-center sm:text-left">
+              <p className="text-xs sm:text-sm text-gray-400">
+                © {new Date().getFullYear()} The Black Tie Chandelier Gala. All rights reserved.
+              </p>
+              <p className="text-xs text-gray-500 mt-1">
+                Made by{' '}
+                <a
+                  href="https://loftyrankers.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-gold transition-colors"
+                >
+                  Lofty Rankers
+                </a>
+              </p>
+            </div>
             <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 md:gap-6 lg:gap-8 text-xs sm:text-sm text-gray-400">
               <Link 
-                href="#privacy" 
+                href="/privacy-policy" 
                 className="hover:text-gold transition-colors relative group"
               >
                 Privacy Policy
@@ -260,7 +273,7 @@ export default function Footer() {
               </Link>
               <span className="text-gray-600 hidden sm:inline">•</span>
               <Link 
-                href="#terms" 
+                href="/terms-of-service" 
                 className="hover:text-gold transition-colors relative group"
               >
                 Terms of Service
@@ -268,7 +281,7 @@ export default function Footer() {
               </Link>
               <span className="text-gray-600 hidden sm:inline">•</span>
               <Link 
-                href="#cookies" 
+                href="/cookie-policy" 
                 className="hover:text-gold transition-colors relative group"
               >
                 Cookie Policy

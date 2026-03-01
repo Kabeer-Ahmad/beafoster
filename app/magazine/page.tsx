@@ -1,65 +1,22 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useRef } from 'react';
 import { motion } from 'framer-motion';
-import Image from 'next/image';
-import { BookOpen, ArrowRight, Calendar, ChevronLeft, ChevronRight } from 'lucide-react';
-import Flipbook from '@/components/Flipbook';
+import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 
 export default function Magazine() {
-  const [isFlipbookOpen, setIsFlipbookOpen] = useState(false);
   const archivesScrollRef = useRef<HTMLDivElement>(null);
-
-  const latestIssue = {
-    title: 'Spring 2024',
-    subtitle: 'The Art of Minimalism',
-    cover: 'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=800&q=80',
-    pages: [
-      'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=1200&q=80',
-      'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=1200&q=80',
-      'https://images.unsplash.com/photo-1445205170230-053b83016050?w=1200&q=80',
-      'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=1200&q=80',
-      'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=1200&q=80',
-      'https://images.unsplash.com/photo-1483985988355-763728e1935b?w=1200&q=80',
-    ],
-  };
 
   const archives = [
     {
-      issue: 'Winter 2023',
-      title: 'Luxury Redefined',
-      cover: 'https://images.unsplash.com/photo-1511578314322-379afb476865?w=600&q=80',
-      date: 'December 2023',
+      year: '2017',
+      title: '2017 Magazine',
+      pdf: '/2017_mag.pdf',
     },
     {
-      issue: 'Fall 2023',
-      title: 'Autumn Elegance',
-      cover: 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=600&q=80',
-      date: 'September 2023',
-    },
-    {
-      issue: 'Summer 2023',
-      title: 'Coastal Luxury',
-      cover: 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=600&q=80',
-      date: 'June 2023',
-    },
-    {
-      issue: 'Spring 2023',
-      title: 'Renewal & Refinement',
-      cover: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&q=80',
-      date: 'March 2023',
-    },
-    {
-      issue: 'Winter 2022',
-      title: 'Timeless Traditions',
-      cover: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80',
-      date: 'December 2022',
-    },
-    {
-      issue: 'Fall 2022',
-      title: 'Modern Heritage',
-      cover: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=600&q=80',
-      date: 'September 2022',
+      year: '2018',
+      title: '2018 Magazine',
+      pdf: '/2018_mag.pdf',
     },
   ];
 
@@ -89,80 +46,23 @@ export default function Magazine() {
 
   return (
     <div className="pt-20">
-      {/* Hero Section - 3D Book Cover */}
-      <section className="min-h-[60vh] sm:min-h-[70vh] md:min-h-[80vh] lg:min-h-screen flex items-center bg-cream relative overflow-hidden py-8 sm:py-12 md:py-16 lg:py-0">
+      {/* Hero Section */}
+      <section className="py-16 md:py-24 lg:py-32 bg-cream relative overflow-hidden">
         <div className="container-luxury w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            {/* Left: 3D Book Cover */}
-            <motion.div
-              initial={{ opacity: 0, x: -50, rotateY: -15 }}
-              animate={{ opacity: 1, x: 0, rotateY: 0 }}
-              transition={{ duration: 1, ease: 'easeOut' }}
-              className="relative perspective-1000"
-              style={{ perspective: '1000px' }}
-            >
-              <div className="relative w-full max-w-md mx-auto">
-                <motion.div
-                  whileHover={{ rotateY: -5, scale: 1.02 }}
-                  transition={{ type: 'spring', stiffness: 300 }}
-                  className="relative"
-                  style={{ transformStyle: 'preserve-3d' }}
-                >
-                  <div className="relative aspect-[2/3] rounded-lg overflow-hidden shadow-2xl">
-                    <Image
-                      src={latestIssue.cover}
-                      alt={latestIssue.title}
-                      fill
-                      className="object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-br from-black/20 to-transparent" />
-                  </div>
-                  {/* Book spine effect */}
-                  <div className="absolute left-0 top-0 bottom-0 w-2 bg-charcoal/30 rounded-l-lg" />
-                </motion.div>
-              </div>
-            </motion.div>
-
-            {/* Right: Latest Issue Info */}
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.3, duration: 0.8 }}
-              className="text-center lg:text-left"
-            >
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5 }}
-              >
-                <div className="inline-flex items-center gap-2 text-sm uppercase tracking-wider text-charcoal mb-4">
-                  <Calendar className="w-4 h-4" />
-                  <span>Latest Issue</span>
-                </div>
-                <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif text-black mb-4">
-                  {latestIssue.title}
-                </h1>
-                <div className="w-20 h-px bg-gold mb-6 mx-auto lg:mx-0" />
-                <h2 className="text-3xl md:text-4xl font-serif text-charcoal mb-8">
-                  {latestIssue.subtitle}
-                </h2>
-                <p className="text-lg text-charcoal mb-8 leading-relaxed max-w-xl mx-auto lg:mx-0">
-                  Explore the latest trends in luxury fashion, interior design, and editorial excellence. 
-                  This issue features exclusive interviews, stunning photography, and in-depth stories from 
-                  the world of high fashion and design.
-                </p>
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  onClick={() => setIsFlipbookOpen(true)}
-                  className="inline-flex items-center gap-2 px-8 py-4 bg-black text-white font-medium hover:bg-charcoal transition-colors uppercase tracking-wider group"
-                >
-                  <BookOpen className="w-5 h-5 group-hover:rotate-12 transition-transform" />
-                  Read Digital Flipbook
-                </motion.button>
-              </motion.div>
-            </motion.div>
-          </div>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center max-w-3xl mx-auto"
+          >
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif text-black mb-4">
+              Magazine
+            </h1>
+            <div className="w-20 h-px bg-gold mx-auto mb-6" />
+            <p className="text-lg text-charcoal leading-relaxed">
+              Explore our collection of magazine issues. Browse the archives below to view past editions.
+            </p>
+          </motion.div>
         </div>
       </section>
 
@@ -192,35 +92,38 @@ export default function Magazine() {
               style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
             >
               {archives.map((issue, index) => (
-                <motion.div
-                  key={issue.issue}
+                <motion.a
+                  key={issue.year}
+                  href={issue.pdf}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   initial={{ opacity: 0, x: 30 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1, duration: 0.5 }}
-                  className="group cursor-pointer flex-shrink-0 w-48 sm:w-56 md:w-64"
+                  className="group flex-shrink-0 w-48 sm:w-56 md:w-64"
                 >
-                  <div className="relative aspect-[2/3] overflow-hidden rounded-lg mb-4 bg-charcoal">
-                    <Image
-                      src={issue.cover}
-                      alt={issue.title}
-                      fill
-                      className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110"
+                  <div className="relative aspect-[3/4] overflow-hidden rounded-lg mb-4 bg-cream border-2 border-beige group-hover:border-gold transition-colors">
+                    <iframe
+                      src={`${issue.pdf}#page=1`}
+                      title={issue.title}
+                      className="absolute inset-0 w-full h-full pointer-events-none border-0"
+                      loading="lazy"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <div className="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/80 to-transparent text-white opacity-0 group-hover:opacity-100 transition-opacity">
+                      <span className="inline-flex items-center gap-1 text-sm font-medium uppercase tracking-wider">
+                        View PDF
+                        <ArrowRight className="w-4 h-4" />
+                      </span>
+                    </div>
                   </div>
                   <div className="text-center">
-                    <p className="text-sm uppercase tracking-wider text-charcoal mb-1">
-                      {issue.issue}
-                    </p>
-                    <h3 className="text-lg font-serif text-black mb-1">
+                    <h3 className="text-lg font-serif text-black">
                       {issue.title}
                     </h3>
-                    <p className="text-xs text-charcoal">
-                      {issue.date}
-                    </p>
                   </div>
-                </motion.div>
+                </motion.a>
               ))}
             </div>
 
@@ -330,14 +233,6 @@ export default function Magazine() {
         </div>
       </section>
 
-      {/* Flipbook Modal */}
-      {isFlipbookOpen && (
-        <Flipbook
-          isOpen={isFlipbookOpen}
-          onClose={() => setIsFlipbookOpen(false)}
-          pages={latestIssue.pages}
-        />
-      )}
     </div>
   );
 }

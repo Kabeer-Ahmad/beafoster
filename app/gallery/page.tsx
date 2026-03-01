@@ -9,20 +9,40 @@ export default function Gallery() {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
 
   const galleryImages = [
-    // Portfolio Updates
-    { id: 21, category: 'fashion', src: '/Pictures 4/1 (1).JPG', alt: 'Portfolio Highlight', title: 'Portfolio Highlight' },
-    { id: 22, category: 'events', src: '/Pictures 4/446A6890.jpeg', alt: 'Event Moment', title: 'Event Moment' },
-    { id: 23, category: 'events', src: '/Pictures 4/446A6891.jpeg', alt: 'Event Moment', title: 'Event Moment' },
-    { id: 24, category: 'fashion', src: '/Pictures 4/AboutBea.jpg', alt: 'Dr. Bea Foster', title: 'Dr. Bea Foster' },
-    { id: 25, category: 'events', src: '/Pictures 4/DSC03011.JPG', alt: 'Event Highlight', title: 'Event Highlight' },
-    { id: 26, category: 'events', src: '/Pictures 4/DSC03109.jpeg', alt: 'Social Gathering', title: 'Social Gathering' },
-    { id: 27, category: 'fashion', src: '/Pictures 4/DSCN4236 2.JPG', alt: 'Fashion Detail', title: 'Fashion Detail' },
-    { id: 28, category: 'fashion', src: '/Pictures 4/IMG_0278.jpg', alt: 'Style Showcase', title: 'Style Showcase' },
-    { id: 29, category: 'interiors', src: '/Pictures 4/IMG_9074.jpeg', alt: 'Interior Detail', title: 'Interior Detail' },
-    { id: 30, category: 'fashion', src: '/Pictures 4/unnamed (1).jpg', alt: 'Portfolio Work', title: 'Portfolio Work' },
-    { id: 31, category: 'fashion', src: '/Pictures 4/unnamed (2).jpg', alt: 'Portfolio Work', title: 'Portfolio Work' },
-    { id: 32, category: 'fashion', src: '/Pictures 4/unnamed (3).jpg', alt: 'Portfolio Work', title: 'Portfolio Work' },
-    { id: 33, category: 'fashion', src: '/Pictures 4/unnamed.jpg', alt: 'Portfolio Work', title: 'Portfolio Work' },
+    { id: 21, src: '/Pictures 4/1 (1).JPG', alt: 'Gallery' },
+    { id: 22, src: '/Pictures 4/446A6890.jpeg', alt: 'Gallery' },
+    { id: 23, src: '/Pictures 4/446A6891.jpeg', alt: 'Gallery' },
+    { id: 24, src: '/Pictures 4/AboutBea.jpg', alt: 'Gallery' },
+    { id: 25, src: '/Pictures 4/DSC03011.JPG', alt: 'Gallery' },
+    { id: 26, src: '/Pictures 4/DSC03109.jpeg', alt: 'Gallery' },
+    { id: 27, src: '/Pictures 4/DSCN4236 2.JPG', alt: 'Gallery' },
+    { id: 28, src: '/Pictures 4/IMG_0278.jpg', alt: 'Gallery' },
+    { id: 29, src: '/Pictures 4/IMG_9074.jpeg', alt: 'Gallery' },
+    { id: 30, src: '/Pictures 4/unnamed (1).jpg', alt: 'Gallery' },
+    { id: 31, src: '/Pictures 4/unnamed (2).jpg', alt: 'Gallery' },
+    { id: 32, src: '/Pictures 4/unnamed (3).jpg', alt: 'Gallery' },
+    { id: 33, src: '/Pictures 4/unnamed.jpg', alt: 'Gallery' },
+    { id: 34, src: '/Pictures 4/1c9efc6f-2736-4eba-b321-fdbcf3672060.png', alt: 'Gallery' },
+    { id: 35, src: '/Pictures 4/2f525a5e-e604-4dee-ab04-f3c4f293b6c3.png', alt: 'Gallery' },
+    { id: 36, src: '/Pictures 4/3f0a888e-6b2b-448e-9b97-5080da9009c1-md.jpeg', alt: 'Gallery' },
+    { id: 37, src: '/Pictures 4/3fbc8361-ed77-423b-905d-4a2f2d6cfc9a-md.jpeg', alt: 'Gallery' },
+    { id: 38, src: '/Pictures 4/6e254cd3-6a21-40d4-82ec-e82977c29576-md.jpeg', alt: 'Gallery' },
+    { id: 39, src: '/Pictures 4/9a8fdfa2-5039-4376-95e0-226c83d76363-2.png', alt: 'Gallery' },
+    { id: 40, src: '/Pictures 4/73df44dc-2ea3-4c2d-b08d-438f0197aee2 (1)large.png', alt: 'Gallery' },
+    { id: 41, src: '/Pictures 4/73df44dc-2ea3-4c2d-b08d-438f0197aee2 (2.png', alt: 'Gallery' },
+    { id: 42, src: '/Pictures 4/745ad40d-218f-4f18-822b-540c2403c82a.png', alt: 'Gallery' },
+    { id: 43, src: '/Pictures 4/65740269-c72d-4c12-90ff-0e16ca2e7cca (1).png', alt: 'Gallery' },
+    { id: 44, src: '/Pictures 4/a645e6a3-cb6b-4241-af1e-1ce45020b32a-md.jpeg', alt: 'Gallery' },
+    { id: 45, src: '/Pictures 4/a34456ca-2a56-4d47-b690-361e3c8edd62-md.jpeg', alt: 'Gallery' },
+    { id: 46, src: '/Pictures 4/abcda976-5ffc-4d9d-af7b-ac5413bb9fd4-md.jpeg', alt: 'Gallery' },
+    { id: 47, src: '/Pictures 4/abe6f215-2c9a-43d0-b9eb-bd1ed027b034-md.jpeg', alt: 'Gallery' },
+    { id: 48, src: '/Pictures 4/all-over-print-unisex-wide-leg-pants-white-back-697a7227bb3cb.png', alt: 'Gallery' },
+    { id: 49, src: '/Pictures 4/BFStudio-32.jpg', alt: 'Gallery' },
+    { id: 50, src: '/Pictures 4/c07bc67d-3020-40d7-a99e-20f585fd310c.png', alt: 'Gallery' },
+    { id: 51, src: '/Pictures 4/c36a9712-3992-4c58-9f9b-7113f72790ec-md.jpeg', alt: 'Gallery' },
+    { id: 52, src: '/Pictures 4/c2666639-23cd-4deb-a96f-21e37120811c-3.png', alt: 'Gallery' },
+    { id: 53, src: '/Pictures 4/cc87a60b-1e1b-482b-9e14-63f6a4fdc6a7-md.jpeg', alt: 'Gallery' },
+    { id: 54, src: '/Pictures 4/ChatGPT Image Feb 19, 2026, 08_56_52 PM.png', alt: 'Gallery' },
   ];
 
   const filteredImages = galleryImages;
@@ -122,14 +142,8 @@ export default function Gallery() {
                   height={0}
                   sizes="100vw"
                   style={{ width: '100%', height: 'auto' }}
-                  className="transition-transform duration-700 group-hover:scale-110"
+                  className="object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <div className="absolute bottom-0 left-0 right-0 p-3 sm:p-4 md:p-6 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500">
-                  <h3 className="text-white text-xs sm:text-sm md:text-base font-serif mb-0.5 sm:mb-1">
-                    {image.title}
-                  </h3>
-                </div>
               </motion.div>
             ))}
           </motion.div>
@@ -202,10 +216,7 @@ export default function Gallery() {
 
               {/* Image Info */}
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-4 sm:p-6 md:p-8 text-center">
-                <h3 className="text-white text-base sm:text-lg md:text-xl lg:text-2xl font-serif mb-1 sm:mb-2">
-                  {currentImage.title}
-                </h3>
-                <p className="text-white/60 text-xs sm:text-sm mt-1 sm:mt-2">
+                <p className="text-white/60 text-xs sm:text-sm">
                   {currentIndex + 1} of {filteredImages.length}
                 </p>
               </div>

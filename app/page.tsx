@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRight, ShoppingBag, Calendar, Award, ChevronLeft, ChevronRight, BookOpen, Star } from 'lucide-react';
 import MagazineFlipbookSection from '@/components/MagazineFlipbookSection';
+import { upcomingEvent } from '@/lib/eventData';
 import { useRef } from 'react';
 
 export default function Home() {
@@ -598,101 +599,146 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Books by Bea */}
+      {/* Books by Bea + Upcoming Event - Two Column */}
       <section className="py-12 sm:py-16 md:py-24 lg:py-32 bg-cream">
         <div className="container-luxury px-4 sm:px-0">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-8 sm:mb-12 md:mb-16"
-          >
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif text-black mb-3 sm:mb-4">
-              Books by Bea
-            </h2>
-            <div className="w-16 sm:w-20 h-px bg-gold mx-auto mb-4 sm:mb-6" />
-            <p className="text-base sm:text-lg md:text-xl text-charcoal/80 leading-relaxed max-w-2xl mx-auto font-medium">
-              Discover Dr. Bea Foster&apos;s inspiring stories of resilience, beauty, and finding light through the darkness
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12 max-w-5xl mx-auto">
-            {/* Book 1: Designing In The Dark */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 xl:gap-20">
+            {/* Left Column: Books by Bea */}
             <motion.div
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="bg-white border border-beige overflow-hidden hover:shadow-xl transition-shadow group"
+              className="flex flex-col"
             >
-              <div className="p-6 sm:p-8 md:p-10 flex flex-col h-full">
-                <div className="flex items-center gap-2 mb-4">
-                  <BookOpen className="w-6 h-6 text-gold" />
-                  <span className="text-sm uppercase tracking-wider text-gold font-medium">Kindle Edition</span>
-                </div>
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-serif text-black mb-2 group-hover:text-gold transition-colors">
-                  Designing In The Dark
-                </h3>
-                <p className="text-base text-charcoal mb-3">by Bea Foster</p>
-                <div className="flex items-center gap-1 mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-gold text-gold" />
-                  ))}
-                  <span className="text-base text-charcoal ml-1">5.0 (7 reviews)</span>
-                </div>
-                <p className="text-base sm:text-lg text-charcoal leading-relaxed mb-6 flex-1">
-                  A reflection and reminder of how we all can achieve through it all. If it can happen for me it can happen for you. A little Black girl from Alabama, how I found my way with determination and learned wisdom, along with my faith in God. I had to open doors and move barriers in fashion and the design world. I found my way out of the darkness. You can do the same if you push ahead and never quit.
-                </p>
-                <p className="text-sm text-charcoal/70 mb-6">225 pages · English · December 2020</p>
-                <a
-                  href="https://www.amazon.com/Designing-Dark-Bea-Foster-ebook/dp/B08RHVC5Q1?ref_=ast_author_dp&th=1&psc=1"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-3 bg-black text-white text-base font-semibold hover:bg-charcoal transition-colors uppercase tracking-wider group/btn"
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-black mb-3 sm:mb-4">
+                Books by Bea
+              </h2>
+              <div className="w-16 sm:w-20 h-px bg-gold mb-4 sm:mb-6" />
+              <p className="text-base sm:text-lg text-charcoal/80 leading-relaxed mb-8 font-medium">
+                Discover Dr. Bea Foster&apos;s inspiring stories of resilience, beauty, and finding light through the darkness
+              </p>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
+                {/* Book 1: Designing In The Dark */}
+                <motion.div
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.1 }}
+                  className="bg-white border border-beige overflow-hidden hover:shadow-xl transition-shadow group"
                 >
-                  Buy on Amazon
-                  <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-                </a>
+                  <div className="p-6 sm:p-8 flex flex-col h-full">
+                    <div className="flex items-center gap-2 mb-4">
+                      <BookOpen className="w-6 h-6 text-gold" />
+                      <span className="text-sm uppercase tracking-wider text-gold font-medium">Kindle Edition</span>
+                    </div>
+                    <h3 className="text-xl sm:text-2xl font-serif text-black mb-2 group-hover:text-gold transition-colors">
+                      Designing In The Dark
+                    </h3>
+                    <p className="text-base text-charcoal mb-3">by Bea Foster</p>
+                    <div className="flex items-center gap-1 mb-4">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className="w-4 h-4 fill-gold text-gold" />
+                      ))}
+                      <span className="text-sm text-charcoal ml-1">5.0 (7 reviews)</span>
+                    </div>
+                    <p className="text-base text-charcoal leading-relaxed mb-6 flex-1 line-clamp-4">
+                      A reflection and reminder of how we all can achieve through it all. If it can happen for me it can happen for you. A little Black girl from Alabama, how I found my way with determination and learned wisdom, along with my faith in God.
+                    </p>
+                    <a
+                      href="https://www.amazon.com/Designing-Dark-Bea-Foster-ebook/dp/B08RHVC5Q1?ref_=ast_author_dp&th=1&psc=1"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center gap-2 w-full px-6 py-3 bg-black text-white text-sm font-semibold hover:bg-charcoal transition-colors uppercase tracking-wider group/btn"
+                    >
+                      Buy on Amazon
+                      <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                    </a>
+                  </div>
+                </motion.div>
+
+                {/* Book 2: Bea and Beauty */}
+                <motion.div
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.2 }}
+                  className="bg-white border border-beige overflow-hidden hover:shadow-xl transition-shadow group"
+                >
+                  <div className="p-6 sm:p-8 flex flex-col h-full">
+                    <div className="flex items-center gap-2 mb-4">
+                      <BookOpen className="w-6 h-6 text-gold" />
+                      <span className="text-sm uppercase tracking-wider text-gold font-medium">Paperback</span>
+                    </div>
+                    <h3 className="text-xl sm:text-2xl font-serif text-black mb-2 group-hover:text-gold transition-colors">
+                      Bea and Beauty
+                    </h3>
+                    <p className="text-base text-charcoal mb-3">by Bea Foster</p>
+                    <div className="flex items-center gap-1 mb-4">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className="w-4 h-4 fill-gold text-gold" />
+                      ))}
+                      <span className="text-sm text-charcoal ml-1">5.0 (1 review)</span>
+                    </div>
+                    <p className="text-base text-charcoal leading-relaxed mb-6 flex-1 line-clamp-4">
+                      A small quick read, warm and humorous with life experiences—a young Black girl growing up with her mother and grandmother in Montgomery, Alabama, ending up in Columbus, Ohio.
+                    </p>
+                    <a
+                      href="https://www.amazon.com/Bea-Beauty-Foster/dp/1716439272?ref_=ast_author_dp&th=1&psc=1"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center gap-2 w-full px-6 py-3 bg-black text-white text-sm font-semibold hover:bg-charcoal transition-colors uppercase tracking-wider group/btn"
+                    >
+                      Buy on Amazon
+                      <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                    </a>
+                  </div>
+                </motion.div>
               </div>
             </motion.div>
 
-            {/* Book 2: Bea and Beauty */}
+            {/* Right Column: Upcoming Event */}
             <motion.div
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="bg-white border border-beige overflow-hidden hover:shadow-xl transition-shadow group"
+              transition={{ delay: 0.1 }}
+              className="flex flex-col"
             >
-              <div className="p-6 sm:p-8 md:p-10 flex flex-col h-full">
-                <div className="flex items-center gap-2 mb-4">
-                  <BookOpen className="w-6 h-6 text-gold" />
-                  <span className="text-sm uppercase tracking-wider text-gold font-medium">Paperback</span>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-black mb-3 sm:mb-4">
+                Upcoming Event
+              </h2>
+              <div className="w-16 sm:w-20 h-px bg-gold mb-4 sm:mb-6" />
+              <p className="text-base sm:text-lg text-charcoal/80 leading-relaxed mb-8 font-medium">
+                Join us for an evening of elegance and celebration
+              </p>
+
+              <Link href="/events" className="group flex-1 block">
+                <div className="bg-white border border-beige overflow-hidden hover:shadow-xl transition-shadow h-full flex flex-col">
+                  <div className="relative h-56 sm:h-64 md:h-72 lg:h-80 bg-charcoal flex-1 min-h-[200px]">
+                    <Image
+                      src="/Pictures 4/1 (1).JPG"
+                      alt={upcomingEvent.title}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="p-6 sm:p-8">
+                    <div className="flex items-center gap-2 text-sm text-charcoal mb-3">
+                      <Calendar className="w-4 h-4" />
+                      <span>{upcomingEvent.date}</span>
+                    </div>
+                    <h3 className="text-2xl sm:text-3xl font-serif text-black mb-2 group-hover:text-gold transition-colors">
+                      {upcomingEvent.title}
+                    </h3>
+                    <p className="text-base text-charcoal mb-6">{upcomingEvent.location}</p>
+                    <span className="inline-flex items-center gap-2 text-gold font-medium uppercase tracking-wider text-sm group-hover:gap-3 transition-all">
+                      View Event Details
+                      <ArrowRight className="w-4 h-4" />
+                    </span>
+                  </div>
                 </div>
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-serif text-black mb-2 group-hover:text-gold transition-colors">
-                  Bea and Beauty
-                </h3>
-                <p className="text-base text-charcoal mb-3">by Bea Foster</p>
-                <div className="flex items-center gap-1 mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-gold text-gold" />
-                  ))}
-                  <span className="text-base text-charcoal ml-1">5.0 (1 review)</span>
-                </div>
-                <p className="text-base sm:text-lg text-charcoal leading-relaxed mb-6 flex-1">
-                  A small quick read, warm and humorous with life experiences—a young Black girl growing up with her mother and grandmother, with very little money in Montgomery, Alabama, ending up in Columbus, Ohio. Heartwarming old-time tales of back-in-the-day survival beauty tips and the wisdom her mother and grandmother taught her.
-                </p>
-                <p className="text-sm text-charcoal/70 mb-6">92 pages · English · December 2020</p>
-                <a
-                  href="https://www.amazon.com/Bea-Beauty-Foster/dp/1716439272?ref_=ast_author_dp&th=1&psc=1"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-3 bg-black text-white text-base font-semibold hover:bg-charcoal transition-colors uppercase tracking-wider group/btn"
-                >
-                  Buy on Amazon
-                  <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-                </a>
-              </div>
+              </Link>
             </motion.div>
           </div>
         </div>
@@ -700,62 +746,6 @@ export default function Home() {
 
       {/* Magazine Highlights - Flipbook Style */}
       <MagazineFlipbookSection />
-
-      {/* Upcoming Events */}
-      <section className="py-12 sm:py-16 md:py-24 lg:py-32 bg-white">
-        <div className="container-luxury px-4 sm:px-0">
-          <motion.h2
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif text-black text-center mb-8 sm:mb-12 md:mb-16"
-          >
-            Upcoming Events
-          </motion.h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
-            {[
-              {
-                date: 'Saturday, October 4, 2025',
-                title: 'The Black Tie Chandelier Gala',
-                location: 'The Grand Ballroom, DoubleTree by Hilton',
-                image: '/Pictures 4/1 (1).JPG',
-              },
-            ].map((event, index) => (
-              <motion.div
-                key={event.title}
-                initial={{ opacity: 0, y: 60 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.15 }}
-                className="group cursor-pointer"
-              >
-                <Link href="/events">
-                  <div className="bg-white border border-beige overflow-hidden hover:shadow-xl transition-shadow">
-                    <div className="relative h-48 sm:h-56 md:h-64 bg-charcoal">
-                      <Image
-                        src={event.image}
-                        alt={event.title}
-                        fill
-                        className="object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-110"
-                      />
-                    </div>
-                    <div className="p-4 sm:p-5 md:p-6">
-                      <div className="flex items-center gap-2 text-xs sm:text-sm text-charcoal mb-2 sm:mb-3">
-                        <Calendar className="w-3 h-3 sm:w-4 sm:h-4" />
-                        <span>{event.date}</span>
-                      </div>
-                      <h3 className="text-xl sm:text-2xl font-serif text-black mb-1 sm:mb-2">
-                        {event.title}
-                      </h3>
-                      <p className="text-xs sm:text-sm text-charcoal">{event.location}</p>
-                    </div>
-                  </div>
-                </Link>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Stats Section */}
       <section className="py-12 sm:py-16 md:py-24 lg:py-32 bg-beige text-black relative overflow-hidden">

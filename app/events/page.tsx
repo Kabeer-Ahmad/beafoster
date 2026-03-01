@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { Calendar, MapPin, Clock, Star, Heart, CheckCircle2, Sparkles, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
+import { upcomingEvent } from '@/lib/eventData';
 
 export default function Events() {
 
@@ -40,8 +41,8 @@ export default function Events() {
       <section className="relative h-[60vh] sm:h-[70vh] md:h-[80vh] overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="https://images.unsplash.com/photo-1511578314322-379afb476865?w=1600&q=80"
-            alt="The Black Tie Chandelier Gala"
+            src={upcomingEvent.image}
+            alt={upcomingEvent.title}
             fill
             className="object-cover"
             priority
@@ -56,29 +57,29 @@ export default function Events() {
             className="text-center px-4 max-w-5xl mx-auto"
           >
             <div className="text-gold text-lg md:text-xl font-medium tracking-[0.3em] uppercase mb-4">
-              11th Annual
+              {upcomingEvent.annualLabel}
             </div>
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-serif text-white mb-6 leading-tight">
               The Black Tie<br />Chandelier Gala
             </h1>
             <div className="w-32 h-px bg-gold mx-auto mb-8" />
             <p className="text-xl md:text-3xl text-white/90 font-light tracking-wide mb-8">
-              An Evening of Elegance, Empowerment & Purpose
+              {upcomingEvent.subtitle}
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-white/80 text-sm md:text-base tracking-wider uppercase">
               <div className="flex items-center gap-2">
                 <Calendar className="w-5 h-5 text-gold" />
-                Sunday, October 25, 2026
+                {upcomingEvent.date}
               </div>
               <div className="hidden sm:block text-gold">•</div>
               <div className="flex items-center gap-2">
                 <Clock className="w-5 h-5 text-gold" />
-                6:00 PM – 10:00 PM
+                {upcomingEvent.time}
               </div>
               <div className="hidden sm:block text-gold">•</div>
               <div className="flex items-center gap-2">
                 <MapPin className="w-5 h-5 text-gold" />
-                Location: To Be Determined
+                {upcomingEvent.location}
               </div>
             </div>
           </motion.div>
