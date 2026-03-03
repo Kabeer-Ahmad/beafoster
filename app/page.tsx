@@ -315,19 +315,19 @@ export default function Home() {
               {
                 title: 'Fashion',
                 description: 'Bespoke couture and ready-to-wear collections',
-                image: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=800&q=80',
+                image: '/fashion/f9.webp',
                 href: '/fashion',
               },
               {
                 title: 'Interiors',
                 description: 'Transformative luxury interior design',
-                image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80',
+                image: '/interior_des.jpg',
                 href: '/interiors',
               },
               {
                 title: 'Magazine',
                 description: 'Editorial excellence and storytelling',
-                image: 'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=800&q=80',
+                image: '/Magazine_des.jpg',
                 href: '/magazine',
               },
             ].map((service, index) => (
