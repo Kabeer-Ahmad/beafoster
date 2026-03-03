@@ -24,21 +24,21 @@ export default function Magazine() {
     {
       size: 'Full Page',
       dimensions: '8.5" × 11"',
-      price: '$5,000',
+      price: '$4,500',
       description: 'Maximum visibility with a full-page advertisement',
       features: ['Premium placement', 'High-resolution printing', 'Digital inclusion'],
     },
     {
       size: 'Half Page',
       dimensions: '8.5" × 5.5"',
-      price: '$3,000',
+      price: '$2,500.00',
       description: 'Prominent placement with half-page advertisement',
       features: ['Strategic positioning', 'Quality printing', 'Digital inclusion'],
     },
     {
       size: 'Quarter Page',
       dimensions: '4.25" × 5.5"',
-      price: '$1,500',
+      price: '$900.00',
       description: 'Cost-effective option with quarter-page advertisement',
       features: ['Targeted reach', 'Standard printing', 'Digital inclusion'],
     },
@@ -66,6 +66,49 @@ export default function Magazine() {
         </div>
       </section>
 
+      {/* 2026 Magazine – Flipbook */}
+      <section id="flipbook" className="py-12 md:py-20 lg:py-24 bg-white">
+        <div className="container-luxury px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-8 sm:mb-12"
+          >
+            <span className="text-xs sm:text-sm uppercase tracking-wider text-gold font-medium">Latest Issue</span>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-black mt-2 mb-4">
+              2026 Magazine
+            </h2>
+            <div className="w-20 h-px bg-gold mx-auto mb-4" />
+            <p className="text-charcoal max-w-xl mx-auto">
+              Flip through the digital edition below
+            </p>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="rounded-lg overflow-hidden border border-beige bg-white shadow-lg"
+          >
+            <iframe
+              allowFullScreen
+              allow="clipboard-write"
+              scrolling="no"
+              className="fp-iframe w-full border-0"
+              src="https://heyzine.com/flip-book/d13cbc9f23.html"
+              title="2026 Magazine Flipbook"
+              style={{ height: '500px' }}
+            />
+          </motion.div>
+          <p className="text-center mt-4 text-sm text-charcoal">
+            <a href="/Magazine_2026.pdf" target="_blank" rel="noopener noreferrer" className="text-gold hover:underline">
+              Download PDF
+            </a>
+          </p>
+        </div>
+      </section>
+
       {/* Archives Section */}
       <section className="py-16 md:py-24 lg:py-32 bg-white">
         <div className="container-luxury">
@@ -76,11 +119,11 @@ export default function Magazine() {
             className="text-center mb-12 md:mb-16 lg:mb-20"
           >
             <h2 className="text-4xl sm:text-5xl md:text-6xl font-serif text-black mb-4">
-              Archives
+              Past Issues
             </h2>
             <div className="w-24 h-px bg-gold mx-auto mb-4" />
             <p className="text-base md:text-lg text-charcoal max-w-2xl mx-auto">
-              Browse through our collection of past issues
+              Browse through our collection of past issues (2017, 2018)
             </p>
           </motion.div>
 
